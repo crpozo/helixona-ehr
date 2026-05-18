@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Helixona EHR — Design Preview</title>
+<style>
+  :root {
+    --navy: #0E2A47;
+    --primary: #1E5A8E;
+    --accent: #2E86AB;
+    --bg: #F4F6F9;
+    --panel: #FFFFFF;
+    --line: #D9DEE6;
+    --line-soft: #E8ECF1;
+    --text: #1A2330;
+    --text-soft: #5C6878;
+    --text-faint: #8A95A5;
+    --ok: #2F855A;
+    --warn: #B7791F;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === HEADER === */
+  .topbar {
+    background: var(--panel);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 32px;
+  }
+  .topbar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .topbar-brand {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.2px;
+  }
+  .topbar-brand .sub {
+    font-size: 11px;
+    color: var(--text-faint);
+    font-weight: 400;
+    margin-left: 8px;
+  }
+  .topbar-meta {
+    font-size: 11.5px;
+    color: var(--text-soft);
+  }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--primary) 100%);
+    color: #fff;
+    padding: 70px 32px 60px;
+  }
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(255,255,255,0.12);
+    padding: 5px 12px;
+    border-radius: 14px;
+    margin-bottom: 18px;
+    color: rgba(255,255,255,0.9);
+  }
+  .hero-title {
+    font-size: 38px;
+    font-weight: 300;
+    margin: 0 0 14px;
+    letter-spacing: -0.3px;
+  }
+  .hero-title strong {
+    font-weight: 600;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.85);
+    max-width: 680px;
+    margin: 0 0 32px;
+    line-height: 1.6;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+    max-width: 680px;
+  }
+  .hero-stat-num {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .hero-stat-lbl {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* === MAIN === */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 32px 80px;
+  }
+
+  .section-head {
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-soft);
+    margin: 0 0 4px;
+    font-weight: 600;
+  }
+  .section-desc {
+    font-size: 14px;
+    color: var(--text-soft);
+    margin: 0;
+  }
+
+  /* === MODULE GRID === */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .module-card {
+    display: block;
+    text-decoration: none;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    color: var(--text);
+  }
+  .module-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(14,42,71,0.12);
+    border-color: var(--accent);
+  }
+
+  .module-card.disabled {
+    pointer-events: none;
+    opacity: 0.55;
+  }
+
+  .module-card-head {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--line-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .module-id {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+  }
+  .pill-ready { background: #E6F4EA; color: var(--ok); }
+  .pill-progress { background: #FEF3C7; color: var(--warn); }
+  .pill-planned { background: #EEF1F5; color: var(--text-soft); }
+
+  .module-card-body {
+    padding: 18px 22px 16px;
+  }
+  .module-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 6px;
+    letter-spacing: -0.1px;
+  }
+  .module-summary {
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.55;
+    margin: 0 0 14px;
+    min-height: 60px;
+  }
+  .module-meta {
+    display: flex;
+    gap: 14px;
+    font-size: 11px;
+    color: var(--text-faint);
+    padding-top: 12px;
+    border-top: 1px solid var(--line-soft);
+  }
+  .module-meta strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .module-card-foot {
+    padding: 12px 22px;
+    background: #FAFBFD;
+    border-top: 1px solid var(--line-soft);
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .module-card.disabled .module-card-foot {
+    color: var(--text-faint);
+  }
+
+  /* === INFO PANEL === */
+  .info-panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px 28px;
+    margin-top: 40px;
+  }
+  .info-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0 0 14px;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    font-size: 13px;
+  }
+  .info-label {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-faint);
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .info-value { color: var(--text); }
+
+  /* === FOOTER === */
+  footer {
+    border-top: 1px solid var(--line);
+    background: var(--panel);
+    padding: 22px 32px;
+    margin-top: 60px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 11.5px;
+    color: var(--text-faint);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 720px) {
+    .hero { padding: 50px 22px 44px; }
+    .hero-title { font-size: 28px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 18px; }
+    main { padding: 36px 22px 60px; }
+    .info-grid { grid-template-columns: 1fr; gap: 16px; }
+    .topbar { padding: 14px 22px; }
+    footer { padding: 18px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">Helixona, Inc. <span class="sub">· Functional Medicine</span></div>
+    <div class="topbar-meta">Design Preview · Internal</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">EHR Replacement Engagement</div>
+    <h1 class="hero-title">Helixona <strong>EHR</strong></h1>
+    <p class="hero-sub">
+      Custom electronic health record built around Helixona's functional medicine workflows.
+      Replaces eClinicalWorks with a system designed for the way the clinic actually operates —
+      from first patient inquiry to clinical encounter to claim submission.
+    </p>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">8</div>
+        <div class="hero-stat-lbl">Modules</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-lbl">User roles</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-lbl">Payers integrated</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">36+</div>
+        <div class="hero-stat-lbl">Screens shipped</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <div class="section-head">
+    <h2 class="section-title">Modules</h2>
+    <p class="section-desc">Click any available module to open its interactive wireframe.</p>
+  </div>
+
+  <div class="module-grid">
+
+    <!-- MODULE A — READY -->
+    <a class="module-card" href="module-a.html">
+      <div class="module-card-head">
+        <span class="module-id">Module A</span>
+        <span class="pill pill-ready">Ready for review</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Patient Intake &amp; Onboarding</h3>
+        <p class="module-summary">
+          Triage dashboard, patient mobile portal, front desk readiness view, in-clinic kiosk,
+          and remote MA pre-visit chart prep.
+        </p>
+        <div class="module-meta">
+          <span><strong>36</strong> screens</span>
+          <span><strong>6</strong> roles</span>
+          <span><strong>11</strong> requirements</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Open wireframe</span>
+        <span>→</span>
+      </div>
+    </a>
+
+    <!-- MODULE B — IN PROGRESS -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module B</span>
+        <span class="pill pill-progress">In progress</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Clinical Documentation</h3>
+        <p class="module-summary">
+          Encounter notes, infusion records, lab review, and shared macro templates across providers.
+        </p>
+        <div class="module-meta">
+          <span><strong>—</strong> screens</span>
+          <span><strong>3</strong> roles</span>
+          <span>Sprint 0</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Documentation in progress</span>
+        <span>·</span>
+      </div>
+    </div>
+
+    <!-- MODULE C — PLANNED -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module C</span>
+        <span class="pill pill-planned">Planned</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Orders &amp; Labs</h3>
+        <p class="module-summary">
+          Lab orders, results review with abnormal flagging, and integration with the clinic's
+          reference lab partners.
+        </p>
+        <div class="module-meta">
+          <span>Sprint 0</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Not started</span>
+        <span>·</span>
+      </div>
+    </div>
+
+    <!-- MODULE D — PLANNED -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module D</span>
+        <span class="pill pill-planned">Planned</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Scheduling &amp; Calendar</h3>
+        <p class="module-summary">
+          Provider calendars, infusion chair availability, and integrated room scheduling
+          across multiple practitioners.
+        </p>
+        <div class="module-meta">
+          <span>Sprint 1</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Not started</span>
+        <span>·</span>
+      </div>
+    </div>
+
+    <!-- MODULE E — PLANNED -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module E</span>
+        <span class="pill pill-planned">Planned</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Billing &amp; Claims</h3>
+        <p class="module-summary">
+          Charge capture, 837 generation, and the AI-powered RCM agent that submits OON claims
+          to Blue Shield, Cigna, Anthem, and UnitedHealthcare.
+        </p>
+        <div class="module-meta">
+          <span>Sprint 2</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Not started</span>
+        <span>·</span>
+      </div>
+    </div>
+
+    <!-- MODULE F — PLANNED -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module F</span>
+        <span class="pill pill-planned">Planned</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Patient Communications</h3>
+        <p class="module-summary">
+          Two-way SMS, secure messaging, appointment reminders, and outbound campaigns
+          for follow-up and recall.
+        </p>
+        <div class="module-meta">
+          <span>Sprint 2</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Not started</span>
+        <span>·</span>
+      </div>
+    </div>
+
+    <!-- MODULE G — PLANNED -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module G</span>
+        <span class="pill pill-planned">Planned</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Reporting &amp; Admin</h3>
+        <p class="module-summary">
+          Practice metrics, payer performance, clinical outcomes, and admin controls for
+          users, roles, templates, and integrations.
+        </p>
+        <div class="module-meta">
+          <span>Sprint 0</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Not started</span>
+        <span>·</span>
+      </div>
+    </div>
+
+    <!-- MODULE H — PLANNED -->
+    <div class="module-card disabled">
+      <div class="module-card-head">
+        <span class="module-id">Module H</span>
+        <span class="pill pill-planned">Planned</span>
+      </div>
+      <div class="module-card-body">
+        <h3 class="module-name">Pharmacy &amp; Medication Mgmt</h3>
+        <p class="module-summary">
+          Prescription routing, controlled substance tracking via CURED, Fullscript and
+          Beyond Balance supplement protocols.
+        </p>
+        <div class="module-meta">
+          <span>Sprint 4–5</span>
+        </div>
+      </div>
+      <div class="module-card-foot">
+        <span>Not started</span>
+        <span>·</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info-panel">
+    <h3 class="info-title">About this preview</h3>
+    <div class="info-grid">
+      <div>
+        <div class="info-label">Client</div>
+        <div class="info-value">Helixona, Inc. · Functional medicine infusion clinic · Irvine, CA</div>
+      </div>
+      <div>
+        <div class="info-label">Engagement</div>
+        <div class="info-value">Custom EHR build replacing eClinicalWorks, plus AI-powered RCM automation across four major payers</div>
+      </div>
+      <div>
+        <div class="info-label">Status</div>
+        <div class="info-value">Module A complete and ready for client review. Modules B–H to follow.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>Helixona EHR · Internal design preview</div>
+    <div>Not for clinical or production use</div>
+  </div>
+</footer>
+
+</body>
+</html>

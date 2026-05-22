@@ -414,6 +414,107 @@
     .bay-board { grid-template-columns: 1fr; }
     .fm-systems { grid-template-columns: 1fr; }
   }
+
+  /* === QUESTIONNAIRES === */
+  .quest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .quest-card {
+    background: #fff; border: 1px solid var(--line-soft);
+    border-radius: 8px; padding: 16px 18px;
+    cursor: pointer; transition: border-color 0.12s, transform 0.12s, box-shadow 0.12s;
+    display: flex; gap: 14px;
+  }
+  .quest-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(14,42,71,0.08); }
+  .quest-card.suggested { border: 2px solid var(--accent); padding: 15px 17px; background: #F0F6FB; }
+  .quest-icon {
+    width: 42px; height: 42px; border-radius: 8px;
+    background: #EAF2F8; color: var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 600; flex-shrink: 0;
+  }
+  .quest-icon.mold   { background: #EFEDFB; color: #6B5BD2; }
+  .quest-icon.lyme   { background: #FDE8E8; color: var(--err); }
+  .quest-icon.metab  { background: #FEF3C7; color: var(--warn); }
+  .quest-icon.sf36   { background: #E6F4EA; color: var(--ok); }
+  .quest-icon.brain  { background: #F3E8FF; color: #6B3FA0; }
+  .quest-icon.intake { background: #EAF2F8; color: var(--primary); }
+  .quest-body { flex: 1; }
+  .quest-name { font-size: 13.5px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .quest-desc { font-size: 11.5px; color: var(--text-soft); line-height: 1.5; margin-bottom: 8px; }
+  .quest-meta {
+    display: flex; gap: 12px; font-size: 10.5px; color: var(--text-faint);
+    padding-top: 8px; border-top: 1px dashed var(--line-soft);
+  }
+  .quest-meta strong { color: var(--text-soft); }
+
+  /* Administer view */
+  .q-shell { display: grid; grid-template-columns: 1fr 280px; gap: 16px; align-items: start; }
+  .q-section-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 14px; background: #F0F6FB; border-radius: 6px;
+    margin: 14px 0 12px;
+  }
+  .q-section-name { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+  .q-section-prog { font-size: 11px; color: var(--text-soft); }
+  .q-item {
+    padding: 12px 14px; background: #fff;
+    border: 1px solid var(--line-soft); border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  .q-text { font-size: 13px; color: var(--navy); margin-bottom: 8px; line-height: 1.5; }
+  .q-text .q-num { font-family: ui-monospace, monospace; font-size: 11px; color: var(--text-faint); margin-right: 6px; }
+  .q-choices { display: flex; gap: 6px; flex-wrap: wrap; }
+  .q-choice {
+    padding: 6px 12px; font-size: 11.5px; border: 1px solid var(--line);
+    border-radius: 14px; background: #fff; color: var(--text-soft); cursor: pointer;
+  }
+  .q-choice:hover { border-color: var(--accent); }
+  .q-choice.picked { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 600; }
+  .q-choice.picked-warn { background: var(--warn); color: #fff; border-color: var(--warn); font-weight: 600; }
+  .q-choice.picked-err { background: var(--err); color: #fff; border-color: var(--err); font-weight: 600; }
+
+  /* Scoring */
+  .score-card {
+    background: #fff; border: 1px solid var(--line-soft); border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .score-num { font-size: 32px; font-weight: 600; color: var(--navy); line-height: 1; }
+  .score-num small { font-size: 14px; font-weight: 500; color: var(--text-soft); margin-left: 4px; }
+  .score-lbl { font-size: 11px; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.6px; font-weight: 600; margin-top: 6px; }
+  .score-bar { height: 10px; background: var(--line-soft); border-radius: 5px; overflow: hidden; margin-top: 10px; position: relative; }
+  .score-bar-fill { height: 100%; border-radius: 5px; }
+  .score-bar-fill.lo { background: var(--ok); }
+  .score-bar-fill.mid { background: var(--warn); }
+  .score-bar-fill.hi { background: var(--err); }
+  .score-thresh { font-size: 10.5px; color: var(--text-faint); margin-top: 6px; display: flex; justify-content: space-between; }
+
+  /* Trend mini-chart */
+  .trend-chart {
+    height: 80px; background: #FAFBFD;
+    border-radius: 6px; padding: 10px 12px;
+    display: flex; align-items: end; gap: 8px;
+    border: 1px solid var(--line-soft);
+  }
+  .trend-bar {
+    flex: 1; background: var(--accent); border-radius: 3px 3px 0 0;
+    position: relative;
+    min-height: 4px;
+    display: flex; align-items: end; justify-content: center;
+  }
+  .trend-bar-lbl {
+    font-size: 9.5px; color: #fff; font-weight: 600;
+    padding-bottom: 2px;
+  }
+  .trend-bar.high   { background: var(--err); }
+  .trend-bar.mid    { background: var(--warn); }
+  .trend-bar.low    { background: var(--ok); }
+  .trend-bar.future { background: var(--line); opacity: 0.7; }
+  .trend-labels { display: flex; gap: 8px; padding: 4px 12px 0; font-size: 10px; color: var(--text-faint); }
+  .trend-labels span { flex: 1; text-align: center; }
+
+  @media (max-width: 900px) {
+    .quest-grid { grid-template-columns: 1fr; }
+    .q-shell { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -447,6 +548,11 @@
     <div class="nav-item" data-screen="11"><span class="nav-num">11</span> Sign &amp; Lock</div>
     <div class="nav-item" data-screen="12"><span class="nav-num">12</span> Amendment / Addendum</div>
 
+    <div class="nav-group">Questionnaires</div>
+    <div class="nav-item" data-screen="28"><span class="nav-num">28</span> Library</div>
+    <div class="nav-item" data-screen="29"><span class="nav-num">29</span> Administer</div>
+    <div class="nav-item" data-screen="30"><span class="nav-num">30</span> Results &amp; Scoring</div>
+
     <div class="nav-group">Infusion Suite</div>
     <div class="nav-item" data-screen="13"><span class="nav-num">13</span> Bay Board</div>
     <div class="nav-item" data-screen="14"><span class="nav-num">14</span> Pre-Infusion Verification</div>
@@ -479,7 +585,7 @@
         <div class="top-title" id="topTitle">Overview &amp; Scope</div>
       </div>
       <div style="text-align:right;">
-        <div class="top-screen-id" id="topScreenId">Screen 00 / 28</div>
+        <div class="top-screen-id" id="topScreenId">Screen 00 / 30</div>
         <div class="top-meta" id="topRole">Cover</div>
       </div>
     </div>
@@ -492,7 +598,7 @@
 <div class="screen active" id="screen-0">
   <div class="cover">
     <h1>Module B · Clinical Documentation</h1>
-    <div class="sub">Functional wireframe · 28 screens across 6 functional areas · For client review</div>
+    <div class="sub">Functional wireframe · 31 screens across 7 functional areas · For client review</div>
 
     <div class="meta-grid">
       <div><div class="meta-lbl">Client</div><div class="meta-val">Helixona, Inc.</div></div>
@@ -539,7 +645,7 @@
   <div class="card" style="margin-top:18px;">
     <div class="seg-divider" style="margin-top:0">How to use this document</div>
     <div style="font-size:13px; line-height:1.7;">
-      Use the left navigation to walk through all 28 screens in order, or jump directly to a functional area.
+      Use the left navigation to walk through all 31 screens in order, or jump directly to a functional area.
       Each screen shows the wireframe layout, the role(s) involved, and the functional requirement(s) it satisfies.
       All copy, data, and visuals shown are illustrative — final styling, content, and validation rules will be defined during the build phase.
       Module B picks up where Module A ends: the moment the patient is checked in, the provider opens the encounter from here.
@@ -3158,6 +3264,466 @@ Patient is appropriate candidate for IV nutrient therapy as adjunct to lifestyle
   </div>
 </div>
 
+<!-- ===================================== SCREEN 28: QUESTIONNAIRES LIBRARY ===================================== -->
+<div class="screen" id="screen-28">
+  <div class="frame">
+    <div class="frame-titlebar">
+      <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+      <div class="frame-url">helixona.app/clinical/enc/SA-1158/questionnaires</div>
+    </div>
+    <div class="frame-body">
+      <div class="app-header">
+        <div>
+          <div class="app-logo">Sarah Anderson · 44 y/o F · MRN 1158</div>
+          <div class="app-logo-sub">Pre-Visit Questionnaires Library</div>
+        </div>
+        <div class="app-user"><div class="avatar">D</div> Dr. Drannikov</div>
+      </div>
+
+      <h2 class="page-title">Questionnaires</h2>
+      <p class="page-sub">Standardized clinical instruments and clinic-specific questionnaires. Pick one to administer with the patient now, or send to the patient portal for completion before the visit. Suggestions are surfaced based on the patient's chief complaint and history.</p>
+
+      <div class="enc-status-bar">
+        <div>
+          Suggested for this patient based on chief complaint (Long COVID + fatigue):
+          <span class="pill pill-warn">Mold Exposure</span>
+          <span class="pill pill-warn">SF-36 Quality of Life</span>
+          <span class="pill pill-warn">Lyme Symptom Severity</span>
+        </div>
+        <div>
+          <button class="btn btn-sm">Bundle: send all 3 →</button>
+        </div>
+      </div>
+
+      <div class="seg-divider" style="margin-top:0;">Suggested for this visit</div>
+      <div class="quest-grid">
+        <div class="quest-card suggested" data-action="b-administer-questionnaire" data-name="Mold History">
+          <div class="quest-icon mold">⌘</div>
+          <div class="quest-body">
+            <div class="quest-name">Mold History Questionnaire</div>
+            <div class="quest-desc">Environmental exposure assessment — residence history, water damage, visible mold, dampness. Provider-administered conversation.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> 28 questions</span>
+              <span><strong>Time</strong> ~10 min</span>
+              <span><strong>Mode</strong> Provider-led</span>
+              <span><strong>Last</strong> Never</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-card suggested" data-action="b-administer-questionnaire" data-name="SF-36">
+          <div class="quest-icon sf36">✓</div>
+          <div class="quest-body">
+            <div class="quest-name">SF-36 · Quality of Life</div>
+            <div class="quest-desc">Validated 36-item instrument across 8 domains (physical, role, pain, social, emotional, vitality, mental, general health). Useful as a baseline and serial measure of treatment response.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> 36 items</span>
+              <span><strong>Time</strong> ~7 min</span>
+              <span><strong>Mode</strong> Patient self-report</span>
+              <span><strong>Last</strong> Never</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-card suggested" data-action="b-administer-questionnaire" data-name="Lyme">
+          <div class="quest-icon lyme">L</div>
+          <div class="quest-body">
+            <div class="quest-name">Lyme Symptom Severity</div>
+            <div class="quest-desc">30-item 0–4 severity rating across constitutional, musculoskeletal, neurologic, autonomic, and cognitive symptom clusters. Patterns suggest tickborne workup if score profile aligns.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> 30 items</span>
+              <span><strong>Time</strong> ~6 min</span>
+              <span><strong>Mode</strong> Patient self-report</span>
+              <span><strong>Last</strong> Never</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-card" data-action="b-administer-questionnaire" data-name="Metabolic">
+          <div class="quest-icon metab">M</div>
+          <div class="quest-body">
+            <div class="quest-name">Metabolic Assessment</div>
+            <div class="quest-desc">17-category functional medicine assessment — gut, biliary, blood sugar, adrenal, thyroid, hormones, hydration, with 4-point Never/Often/Frequently/Always grading and per-category totals.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> ~110 items</span>
+              <span><strong>Time</strong> ~20 min</span>
+              <span><strong>Mode</strong> Patient self-report</span>
+              <span><strong>Last</strong> Never</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="seg-divider">All instruments</div>
+      <div class="quest-grid">
+        <div class="quest-card" data-action="b-administer-questionnaire" data-name="Brain Region Localization">
+          <div class="quest-icon brain">B</div>
+          <div class="quest-body">
+            <div class="quest-name">Brain Region Localization Form</div>
+            <div class="quest-desc">Autonomic and epileptiform symptom checklist used by neurologically-focused care. Helps localize regions and guide further workup.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> 22 items</span>
+              <span><strong>Time</strong> ~5 min</span>
+              <span><strong>Mode</strong> Provider-led</span>
+              <span><strong>Last</strong> Never</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-card" data-action="b-administer-questionnaire" data-name="New Patient Packet">
+          <div class="quest-icon intake">N</div>
+          <div class="quest-body">
+            <div class="quest-name">New Patient Packet</div>
+            <div class="quest-desc">Full intake — demographics, medical story, past medical &amp; surgical hx, meds, supplements, allergies, social/family hx, lifestyle, ACEs, chronological timeline. 7 pages.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> ~120 fields</span>
+              <span><strong>Time</strong> ~25 min</span>
+              <span><strong>Mode</strong> Patient · portal</span>
+              <span><strong>Last</strong> Completed at intake</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-card" data-action="b-administer-questionnaire" data-name="L2/L3 New Patient">
+          <div class="quest-icon intake">L2</div>
+          <div class="quest-body">
+            <div class="quest-name">L2/L3 New Patient Packet</div>
+            <div class="quest-desc">Extended intake for tier-2/tier-3 services (EBOO, Erchonia laser, advanced IV protocols). Adds support team, implanted devices, anticoagulant allergies, G6PD status.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> ~95 fields</span>
+              <span><strong>Time</strong> ~20 min</span>
+              <span><strong>Mode</strong> Patient · portal</span>
+              <span><strong>Last</strong> Not started</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quest-card" data-action="b-administer-questionnaire" data-name="L2/L3 Follow-up">
+          <div class="quest-icon intake">L2</div>
+          <div class="quest-body">
+            <div class="quest-name">L2/L3 Follow-up Packet</div>
+            <div class="quest-desc">Follow-up version of the L2/L3 intake. Prefills prior answers and asks the patient to confirm or update. Sent before every L2/L3 follow-up encounter.</div>
+            <div class="quest-meta">
+              <span><strong>Length</strong> ~60 fields</span>
+              <span><strong>Time</strong> ~12 min</span>
+              <span><strong>Mode</strong> Patient · portal</span>
+              <span><strong>Last</strong> Not yet applicable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 18px;">
+        <strong>How this fits the workflow:</strong> Patient-completed instruments (SF-36, Lyme, Metabolic, intake packets) can be pushed to the patient portal before the visit so the provider walks in with results in hand. Provider-led instruments (Mold history, Brain Region Localization, New Patient packet review) are administered conversationally during the encounter. All scores attach to the chart, surface in the SOAP note's Subjective section, and trend over time on the Results &amp; Scoring screen.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 29: ADMINISTER QUESTIONNAIRE ===================================== -->
+<div class="screen" id="screen-29">
+  <div class="frame">
+    <div class="frame-titlebar">
+      <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+      <div class="frame-url">helixona.app/clinical/enc/SA-1158/questionnaires/mold-history</div>
+    </div>
+    <div class="frame-body">
+      <div class="app-header">
+        <div>
+          <div class="app-logo">Mold History Questionnaire</div>
+          <div class="app-logo-sub">For Sarah Anderson · MRN 1158 · Administered live by Dr. Drannikov</div>
+        </div>
+        <div class="app-user"><div class="avatar">D</div> Dr. Drannikov</div>
+      </div>
+
+      <div class="enc-status-bar">
+        <div>
+          <span class="pill pill-warn">● In progress</span>
+          Auto-saved 8s ago · 16 of 28 answered · ~4 min to complete
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-sm">Send remaining to patient portal</button>
+          <button class="btn btn-sm">Save &amp; continue later</button>
+          <button class="btn btn-sm btn-primary" data-action="b-submit-questionnaire">Submit &amp; score →</button>
+        </div>
+      </div>
+
+      <div class="q-shell">
+        <div>
+          <div class="inquiry-progress" style="margin-bottom: 14px;"><div class="inquiry-progress-fill" style="width: 57%; background: var(--primary);"></div></div>
+
+          <div class="q-section-head">
+            <div class="q-section-name">Section 1 · Residence overview</div>
+            <div class="q-section-prog">5 of 5 answered</div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">01</span>What year was your residence built?</div>
+            <input class="field-input" value="1982" style="max-width: 200px;" />
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">02</span>Does your residence smell musty?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Yes</span><span class="q-choice">No</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">03</span>Is mold visible anywhere inside your residence?</div>
+            <div class="q-choices"><span class="q-choice">Yes</span><span class="q-choice picked">No</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">04</span>Does your home have a crawlspace or basement?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Yes</span><span class="q-choice">No</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">05</span>If yes, is the crawlspace or basement damp or musty?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Yes</span><span class="q-choice">No</span><span class="q-choice">Do not know</span></div>
+          </div>
+
+          <div class="q-section-head">
+            <div class="q-section-name">Section 2 · Water intrusion &amp; drainage</div>
+            <div class="q-section-prog">6 of 8 answered</div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">06</span>Is there any standing water inside or around the outside of your residence?</div>
+            <div class="q-choices"><span class="q-choice">Yes</span><span class="q-choice picked">No</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">07</span>Does the area around your residence slope toward or away from the building?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Toward</span><span class="q-choice">Away</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">08</span>If your residence has gutters, do they overflow during heavy downpours?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Yes</span><span class="q-choice">No</span><span class="q-choice">Do not know</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">09</span>Do any of the windows in your residence leak when it's raining?</div>
+            <div class="q-choices"><span class="q-choice">Yes</span><span class="q-choice picked">No</span><span class="q-choice">Do not know</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">10</span>Does the roof of your residence have any leaks?</div>
+            <div class="q-choices"><span class="q-choice">Yes</span><span class="q-choice picked">No</span><span class="q-choice">Do not know</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">11</span>Are water stains present on any ceilings, flooring, or walls?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Yes</span><span class="q-choice">No</span></div>
+          </div>
+
+          <div class="q-section-head">
+            <div class="q-section-name">Section 3 · Interior &amp; ventilation</div>
+            <div class="q-section-prog">5 of 8 answered</div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">12</span>What percentage of your living space is covered by carpet?</div>
+            <input class="field-input" value="40%" style="max-width: 200px;" />
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">13</span>How old is the carpeting in the residence?</div>
+            <input class="field-input" value="approximately 12 years" />
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">14</span>Does the flooring sag in any rooms?</div>
+            <div class="q-choices"><span class="q-choice">Yes</span><span class="q-choice picked">No</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">15</span>Does your dryer vent to the outdoors?</div>
+            <div class="q-choices"><span class="q-choice picked">Yes</span><span class="q-choice">No</span></div>
+          </div>
+
+          <div class="q-item">
+            <div class="q-text"><span class="q-num">16</span>Are others in your household frequently sick?</div>
+            <div class="q-choices"><span class="q-choice picked-warn">Yes</span><span class="q-choice">No</span></div>
+          </div>
+
+          <div class="q-item" style="opacity: 0.55;">
+            <div class="q-text"><span class="q-num">17</span>Not where you live now — have you ever lived in a residence with confirmed or suspected mold/water damage?</div>
+            <div class="q-choices"><span class="q-choice">Yes</span><span class="q-choice">No</span></div>
+          </div>
+
+          <div class="q-item" style="opacity: 0.55;">
+            <div class="q-text"><span class="q-num">18</span>Standalone AC units — describe what's inside the unit(s) regarding mold or dust.</div>
+            <textarea class="field-input" rows="3" placeholder="Provider documents patient's description..."></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px; background: #FAFBFD; border-radius: 6px; margin-top: 12px; font-size: 12px; color: var(--text-soft);">
+            <span>10 more questions across 2 sections remain</span>
+            <span><button class="btn btn-sm btn-primary">Continue →</button></span>
+          </div>
+        </div>
+
+        <div>
+          <div class="rail">
+            <div class="rail-title">About this questionnaire</div>
+            <div style="font-size: 12px; line-height: 1.6;">
+              The Mold History Questionnaire helps the provider build a picture of likely mold and water-damage exposure across the patient's current and prior environments. Not diagnostic on its own — supports clinical reasoning and decisions about VCS testing, urinary mycotoxins, and detox protocols.
+            </div>
+          </div>
+
+          <div class="rail" style="margin-top: 14px;">
+            <div class="rail-title">Early flags from answers</div>
+            <div style="font-size: 12px; line-height: 1.7;">
+              ▸ <span class="pill pill-warn">Musty smell (+)</span><br>
+              ▸ <span class="pill pill-warn">Damp basement (+)</span><br>
+              ▸ <span class="pill pill-warn">Gutters overflow (+)</span><br>
+              ▸ <span class="pill pill-warn">Water stains (+)</span><br>
+              ▸ <span class="pill pill-warn">Slope toward house (+)</span><br>
+              ▸ <span class="pill pill-warn">Household members sick (+)</span>
+            </div>
+          </div>
+
+          <div class="rail" style="margin-top: 14px;">
+            <div class="rail-title">Running tally</div>
+            <div style="font-size: 22px; font-weight: 600; color: var(--warn); margin: 4px 0;">6 / 16 flags</div>
+            <div style="font-size: 11.5px; color: var(--text-soft); line-height: 1.5;">
+              Patient is trending toward moderate-likelihood exposure. Recommend completing the full instrument to confirm.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 30: RESULTS & SCORING ===================================== -->
+<div class="screen" id="screen-30">
+  <div class="frame">
+    <div class="frame-titlebar">
+      <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+      <div class="frame-url">helixona.app/clinical/enc/SA-1158/questionnaires/results</div>
+    </div>
+    <div class="frame-body">
+      <div class="app-header">
+        <div>
+          <div class="app-logo">Questionnaire Results · Sarah Anderson</div>
+          <div class="app-logo-sub">Today's encounter · Scored &amp; ready to push into note</div>
+        </div>
+        <div class="app-user"><div class="avatar">D</div> Dr. Drannikov</div>
+      </div>
+
+      <h2 class="page-title">Results &amp; Scoring</h2>
+      <p class="page-sub">All instruments completed for this patient, with computed scores, clinical thresholds, and trend across prior administrations. Each result can be pushed into the SOAP note's Subjective section with a single click.</p>
+
+      <div class="enc-status-bar">
+        <div>3 instruments completed today · Last scored 11:42 AM</div>
+        <div style="display: flex; gap: 8px;">
+          <button class="btn btn-sm">Print results packet</button>
+          <button class="btn btn-sm btn-primary" data-action="b-push-results-to-note">Push all to SOAP note →</button>
+        </div>
+      </div>
+
+      <!-- MOLD -->
+      <div class="seg-divider" style="margin-top: 0;">Mold History Questionnaire</div>
+      <div class="grid-2" style="grid-template-columns: 280px 1fr; gap: 16px; align-items: start;">
+        <div class="score-card">
+          <div class="score-num">11<small>/ 28</small></div>
+          <div class="score-lbl">Risk flags identified</div>
+          <div class="score-bar"><div class="score-bar-fill mid" style="width: 39%;"></div></div>
+          <div class="score-thresh"><span>Low</span><span>Moderate</span><span>High</span></div>
+          <div style="margin-top: 10px; font-size: 12px; color: var(--warn); font-weight: 600;">Moderate-likelihood exposure</div>
+        </div>
+        <div class="card">
+          <div class="seg-divider" style="margin-top: 0;">Clinical interpretation</div>
+          <div style="font-size: 12.5px; line-height: 1.6;">
+            Patient resides in a 1982 home with a damp basement, water stains in living areas, gutters that overflow, and terrain sloping toward the foundation. Household members reportedly sick. Together these suggest meaningful possibility of indoor mold exposure as a chronic mediator.
+          </div>
+          <div class="seg-divider">Recommended next steps</div>
+          <div style="font-size: 12.5px; line-height: 1.8;">
+            ▸ Visual Contrast Sensitivity (VCS) test in-office<br>
+            ▸ Urinary mycotoxin panel (RealTime Labs)<br>
+            ▸ Discuss environmental remediation referral<br>
+            ▸ Reassess Mold Q in 6 months after remediation
+          </div>
+        </div>
+      </div>
+
+      <!-- SF-36 -->
+      <div class="seg-divider">SF-36 · Quality of Life</div>
+      <div class="grid-2" style="grid-template-columns: 280px 1fr; gap: 16px; align-items: start;">
+        <div class="score-card">
+          <div class="score-num">42<small>/ 100</small></div>
+          <div class="score-lbl">Composite score</div>
+          <div class="score-bar"><div class="score-bar-fill hi" style="width: 42%;"></div></div>
+          <div class="score-thresh"><span>Severely impaired</span><span></span><span>Normal</span></div>
+          <div style="margin-top: 10px; font-size: 12px; color: var(--err); font-weight: 600;">Below population median (50). Severe impairment in vitality and physical role.</div>
+        </div>
+        <div class="card">
+          <div class="seg-divider" style="margin-top: 0;">Domain scores (0–100, higher is better)</div>
+          <table style="font-size: 12px; width: 100%;">
+            <tr><td>Physical Functioning</td><td><strong>55</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill mid" style="width: 55%;"></div></div></td></tr>
+            <tr><td>Role — Physical</td><td><strong>25</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill hi" style="width: 25%;"></div></div></td></tr>
+            <tr><td>Bodily Pain</td><td><strong>62</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill mid" style="width: 62%;"></div></div></td></tr>
+            <tr><td>General Health</td><td><strong>30</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill hi" style="width: 30%;"></div></div></td></tr>
+            <tr><td>Vitality (energy)</td><td><strong>15</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill hi" style="width: 15%;"></div></div></td></tr>
+            <tr><td>Social Functioning</td><td><strong>50</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill mid" style="width: 50%;"></div></div></td></tr>
+            <tr><td>Role — Emotional</td><td><strong>33</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill hi" style="width: 33%;"></div></div></td></tr>
+            <tr><td>Mental Health</td><td><strong>60</strong></td><td><div class="score-bar" style="margin: 0; width: 100px;"><div class="score-bar-fill mid" style="width: 60%;"></div></div></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- LYME -->
+      <div class="seg-divider">Lyme Symptom Severity</div>
+      <div class="grid-2" style="grid-template-columns: 280px 1fr; gap: 16px; align-items: start;">
+        <div class="score-card">
+          <div class="score-num">68<small>/ 120</small></div>
+          <div class="score-lbl">Total severity</div>
+          <div class="score-bar"><div class="score-bar-fill mid" style="width: 57%;"></div></div>
+          <div class="score-thresh"><span>Mild</span><span>Moderate</span><span>Severe</span></div>
+          <div style="margin-top: 10px; font-size: 12px; color: var(--warn); font-weight: 600;">Moderate · Pattern overlap with PASC and chronic fatigue spectrum</div>
+        </div>
+        <div class="card">
+          <div class="seg-divider" style="margin-top: 0;">Top-scoring clusters</div>
+          <div style="font-size: 12.5px; line-height: 1.85;">
+            ▸ <strong>Fatigue cluster</strong>: 14/16 — post-exertional malaise, low energy, unrefreshed sleep<br>
+            ▸ <strong>Cognitive cluster</strong>: 11/12 — word-finding, memory, slowed thinking<br>
+            ▸ <strong>Autonomic cluster</strong>: 10/12 — orthostatic light-headedness, palpitations<br>
+            ▸ <strong>Musculoskeletal</strong>: 8/16 — diffuse aches, joint pain<br>
+            ▸ <strong>Neuro sensory</strong>: 7/16 — tingling, light sensitivity
+          </div>
+          <div class="callout" style="margin-top: 12px;">
+            The fatigue + cognitive + autonomic pattern is consistent with both PASC and chronic Lyme/MSIDS. Pursue EBV reactivation panel and consider tickborne serology if exposure history supports.
+          </div>
+        </div>
+      </div>
+
+      <!-- TREND -->
+      <div class="seg-divider">SF-36 trend (planned reassessments)</div>
+      <div class="card">
+        <div class="trend-chart">
+          <div class="trend-bar low" style="height: 78%;"><span class="trend-bar-lbl">78</span></div>
+          <div class="trend-bar high" style="height: 42%;"><span class="trend-bar-lbl">42</span></div>
+          <div class="trend-bar future" style="height: 0%;"></div>
+          <div class="trend-bar future" style="height: 0%;"></div>
+          <div class="trend-bar future" style="height: 0%;"></div>
+        </div>
+        <div class="trend-labels">
+          <span>Pre-COVID baseline (self-recall)</span>
+          <span>Today 2026-05-22</span>
+          <span>3-mo follow-up</span>
+          <span>6-mo follow-up</span>
+          <span>12-mo follow-up</span>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 18px;">
+        <strong>Push to SOAP note:</strong> Selecting the action above appends each instrument's score and clinical interpretation into the Subjective section, with a structured block (instrument · score · interpretation) the provider can edit. Trends auto-refresh each time the questionnaire is re-administered.
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   </main>
@@ -3328,7 +3894,22 @@ Patient is appropriate candidate for IV nutrient therapy as adjunct to lifestyle
     { title: "System States", role: "Admin", eyebrow: "Reference · edge cases",
       purpose: "How the wireframe handles loading, empty data, errors, blocked actions, and other edge states the client should expect to see. Documents fail-loudly behavior — for example, an order that cannot transmit due to a lab API outage shows clearly, with retry options.",
       who: "All users (visible during specific states)",
-      when: "Encountered situationally during normal use" }
+      when: "Encountered situationally during normal use" },
+
+    { title: "Questionnaires Library", role: "Provider", eyebrow: "Questionnaires · Step 1 · Pick the instrument",
+      purpose: "Catalog of validated and clinic-specific questionnaires the provider can administer with the patient or send to the patient portal. Suggestions surface based on chief complaint and history — for a Long COVID patient, the system foregrounds Mold, SF-36, and Lyme severity. Replaces hunting through PDFs and re-typing answers into the chart.",
+      who: "Dr. Drannikov (provider-led); patient via portal for self-report instruments",
+      when: "Anytime during the encounter; ideally before writing the SOAP plan" },
+
+    { title: "Administer Questionnaire", role: "Provider + Patient", eyebrow: "Questionnaires · Step 2 · Walk through the questions",
+      purpose: "Live administration surface — provider walks through the instrument with the patient conversationally, while the system tracks progress, surfaces early flags as answers come in, and auto-saves continuously. For longer instruments, the partial result can be pushed to the patient portal to finish later. Example shown: Mold History Questionnaire.",
+      who: "Dr. Drannikov with the patient (provider-led) — or the patient alone via portal",
+      when: "During the encounter, or asynchronously through the portal" },
+
+    { title: "Results & Scoring", role: "Provider", eyebrow: "Questionnaires · Step 3 · Score &amp; push",
+      purpose: "All instruments completed for this visit with computed scores, clinical thresholds visualized against population norms, top-scoring symptom clusters, and trend over prior administrations. One-click push of the scored results into the SOAP note's Subjective section so the documentation reflects the structured data the provider just collected.",
+      who: "Dr. Drannikov",
+      when: "Immediately after completing one or more questionnaires; revisited at follow-ups" }
   ];
 
   // ============== NAVIGATION ==============
@@ -3342,7 +3923,7 @@ Patient is appropriate candidate for IV nutrient therapy as adjunct to lifestyle
     const meta = META[n];
     if (meta) {
       document.getElementById('topTitle').textContent = meta.title;
-      document.getElementById('topScreenId').textContent = 'Screen ' + String(n).padStart(2, '0') + ' / 27';
+      document.getElementById('topScreenId').textContent = 'Screen ' + String(n).padStart(2, '0') + ' / 30';
       document.getElementById('topRole').textContent = meta.role;
       document.getElementById('screenDescriptor').innerHTML = `
         <div class="descriptor-eyebrow">${meta.eyebrow}</div>
@@ -3601,7 +4182,21 @@ Patient is appropriate candidate for IV nutrient therapy as adjunct to lifestyle
         `
       });
     },
-    'b-finalize-cosign': () => { closeDrawer(); toast('Co-signed', 'RN note finalized · audit logged', 'ok'); }
+    'b-finalize-cosign': () => { closeDrawer(); toast('Co-signed', 'RN note finalized · audit logged', 'ok'); },
+
+    // ---- QUESTIONNAIRES ----
+    'b-administer-questionnaire': (el) => {
+      goTo(29);
+      toast('Questionnaire opened', `Administering: ${el.dataset.name}`, 'ok');
+    },
+    'b-submit-questionnaire': () => {
+      toast('Questionnaire scored', 'Results ready · trends updated', 'ok');
+      setTimeout(() => goTo(30), 500);
+    },
+    'b-push-results-to-note': () => {
+      toast('Pushed to SOAP note', 'All three instruments appended to Subjective section', 'ok');
+      setTimeout(() => goTo(3), 600);
+    }
   };
 
   // ============== EVENT BUS ==============

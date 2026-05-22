@@ -1459,6 +1459,32 @@
         <label class="inquiry-choice"><span class="letter">H</span>Other Type of Coverage</label>
       </div>
 
+      <!-- Q6 · Insurance card upload (conditional on Q5) -->
+      <div class="inquiry-step">
+        <div class="inquiry-q"><span class="inquiry-num">6</span>Upload a copy of your insurance card</div>
+        <div class="inquiry-help">Front of card. We use this to verify your benefits before your visit. You can also share it later from your portal.</div>
+
+        <div class="upload-zone" style="margin-top: 12px; padding: 26px 20px;">
+          <div class="ico" style="width: 40px; height: 40px; font-size: 18px;">⤴</div>
+          <div style="font-size: 13px; font-weight: 600; color: var(--navy); margin-top: 4px;">Choose file or drag here</div>
+          <div style="font-size: 11px; color: var(--text-faint); margin-top: 4px;">JPG, PNG, or PDF · 10 MB max</div>
+        </div>
+
+        <!-- Example state: file selected (visible to illustrate the "after upload" pattern) -->
+        <div style="display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: #EAF6EE; border: 1px solid #B7DCC3; border-radius: 6px; margin-top: 10px;">
+          <div style="width: 32px; height: 32px; border-radius: 6px; background: var(--ok); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 600;">✓</div>
+          <div style="flex: 1; font-size: 12.5px;">
+            <div style="font-weight: 600; color: var(--navy);">medicare-card-front.jpg</div>
+            <div style="color: var(--text-soft); font-size: 11px;">1.8 MB · uploaded · OCR will run after submit</div>
+          </div>
+          <button class="btn btn-sm">Replace</button>
+        </div>
+
+        <div style="font-size: 10.5px; color: var(--text-faint); margin-top: 10px; line-height: 1.5;">
+          Skip this if you don't have your card handy — Marie will ask for it before scheduling.
+        </div>
+      </div>
+
       <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 8px;" data-action="submit-inquiry">Submit &amp; get your link →</button>
       <div style="font-size: 10.5px; color: var(--text-faint); text-align: center; margin-top: 10px; line-height: 1.5;">
         By submitting, you agree that Helixona may contact you at the email and phone provided.
@@ -1469,9 +1495,11 @@
 
   <div class="callout" style="margin-top: 18px;">
     <strong>Wireframe note:</strong> This replaces the Typeform at <code>form.typeform.com/to/xNOaiQME</code>.
-    On submit, the system creates a <strong>Prospect</strong> record in the EHR (not yet a Patient), sends a magic
-    link by email and SMS (7-day validity), and surfaces the new lead to Marie on the Triage Dashboard.
-    Detailed clinical questions (medical history, allergies, medications) come later, after the patient clicks the magic link.
+    On submit, the system creates a <strong>Prospect</strong> record in the EHR (not yet a Patient), runs OCR on the
+    uploaded insurance card to pre-fill payer/member/group, sends a magic link by email and SMS (7-day validity), and
+    surfaces the new lead to Marie on the Triage Dashboard. The insurance card upload (Q6) is conditional — shown only
+    when Q5 is PPO, Medicare with PPO, or Other Coverage. Detailed clinical questions (medical history, allergies,
+    medications) come later, after the patient clicks the magic link.
   </div>
 </div>
 

@@ -1067,6 +1067,86 @@
   /* === FAILURE MODE MAPPING (cover only) === */
   .fr-row { display: flex; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 12px; }
   .fr-tag { width: 90px; opacity: 0.8; font-family: ui-monospace, monospace; }
+
+  /* === PUBLIC FUNNEL · LANDING PAGE === */
+  .public-page { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+  .public-nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 36px; border-bottom: 1px solid var(--line-soft); }
+  .public-nav-logo { font-size: 16px; font-weight: 600; color: var(--navy); letter-spacing: 0.2px; }
+  .public-nav-links { display: flex; gap: 24px; font-size: 13px; color: var(--text-soft); }
+  .public-nav-links a { color: var(--text-soft); text-decoration: none; cursor: pointer; }
+  .public-nav-links a:hover { color: var(--navy); }
+  .public-nav-cta { padding: 7px 16px; font-size: 12.5px; background: var(--navy); color: #fff; border-radius: 5px; cursor: pointer; }
+
+  .public-hero { padding: 72px 36px 60px; background: linear-gradient(135deg, #F8FAFC 0%, #EAF2F8 100%); text-align: center; }
+  .public-eyebrow { display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 1.6px; background: #fff; color: var(--primary); padding: 5px 14px; border-radius: 14px; border: 1px solid var(--line); font-weight: 600; margin-bottom: 22px; }
+  .public-h1 { font-size: 38px; font-weight: 300; color: var(--navy); margin: 0 0 16px; letter-spacing: -0.4px; line-height: 1.15; }
+  .public-h1 strong { font-weight: 600; }
+  .public-lede { font-size: 16px; color: var(--text-soft); max-width: 580px; margin: 0 auto 32px; line-height: 1.6; }
+  .public-cta { display: inline-block; padding: 14px 32px; font-size: 14px; font-weight: 600; background: var(--navy); color: #fff; border: none; border-radius: 6px; cursor: pointer; transition: background 0.12s, transform 0.12s; }
+  .public-cta:hover { background: var(--primary); transform: translateY(-1px); }
+  .public-cta-sub { font-size: 11.5px; color: var(--text-faint); margin-top: 10px; }
+
+  .public-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 50px 36px; }
+  .public-feature { text-align: left; }
+  .public-feature-ico { width: 36px; height: 36px; border-radius: 8px; background: #EAF2F8; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+  .public-feature-title { font-size: 14.5px; font-weight: 600; color: var(--navy); margin: 0 0 6px; }
+  .public-feature-body { font-size: 12.5px; color: var(--text-soft); line-height: 1.55; }
+
+  .public-foot { padding: 20px 36px; background: #FAFBFD; border-top: 1px solid var(--line-soft); display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-faint); }
+
+  /* === PUBLIC FUNNEL · MOBILE FORMS === */
+  .inquiry-step { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--line-soft); }
+  .inquiry-step:last-child { border-bottom: none; }
+  .inquiry-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; background: var(--navy); color: #fff; border-radius: 4px; font-size: 11px; font-weight: 600; margin-right: 8px; }
+  .inquiry-q { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.35; }
+  .inquiry-help { font-size: 11.5px; color: var(--text-soft); margin-top: 4px; }
+  .inquiry-choice { display: block; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; margin-top: 8px; cursor: pointer; background: #fff; font-size: 12.5px; }
+  .inquiry-choice:hover { background: #F8FAFC; border-color: var(--accent); }
+  .inquiry-choice.selected { background: #EAF2F8; border: 2px solid var(--primary); padding: 9px 13px; font-weight: 600; color: var(--navy); }
+  .inquiry-choice .letter { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; background: #F4F6F9; border: 1px solid var(--line); border-radius: 3px; font-size: 10px; color: var(--text-soft); margin-right: 8px; font-family: ui-monospace, monospace; }
+  .inquiry-choice.selected .letter { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .inquiry-progress { height: 4px; background: var(--line-soft); border-radius: 2px; overflow: hidden; margin-bottom: 18px; }
+  .inquiry-progress-fill { height: 100%; background: var(--primary); }
+
+  /* === PUBLIC FUNNEL · EMAIL & SMS PREVIEW === */
+  .msg-preview { background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(14,42,71,0.04); }
+  .msg-header { padding: 12px 18px; background: #FAFBFD; border-bottom: 1px solid var(--line-soft); font-size: 12px; }
+  .msg-header-row { display: flex; gap: 10px; padding: 2px 0; }
+  .msg-header-lbl { width: 60px; color: var(--text-faint); }
+  .msg-header-val { color: var(--text); }
+  .msg-body { padding: 22px 26px; font-size: 13.5px; line-height: 1.65; color: var(--text); }
+  .msg-cta-btn { display: inline-block; padding: 12px 26px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 5px; font-size: 13px; font-weight: 600; margin: 14px 0; }
+  .msg-foot { padding: 14px 18px; background: #FAFBFD; border-top: 1px solid var(--line-soft); font-size: 10.5px; color: var(--text-faint); line-height: 1.6; }
+  .sms-bubble { background: #E8ECF1; padding: 12px 16px; border-radius: 16px 16px 16px 4px; font-size: 12.5px; color: var(--text); line-height: 1.55; max-width: 280px; }
+
+  /* === PUBLIC FUNNEL · FORM BUILDER === */
+  .fb-shell { display: grid; grid-template-columns: 220px 1fr 280px; gap: 0; min-height: 600px; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .fb-palette { background: #FAFBFD; border-right: 1px solid var(--line-soft); padding: 14px 12px; overflow-y: auto; }
+  .fb-palette-section { font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-faint); font-weight: 600; padding: 8px 8px 6px; }
+  .fb-palette-item { display: flex; align-items: center; gap: 8px; padding: 8px 10px; margin: 2px 0; border-radius: 5px; background: #fff; border: 1px solid var(--line-soft); font-size: 12px; cursor: grab; transition: border-color 0.12s, transform 0.12s; }
+  .fb-palette-item:hover { border-color: var(--accent); transform: translateX(2px); }
+  .fb-palette-icon { width: 20px; height: 20px; border-radius: 4px; background: #EAF2F8; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+  .fb-canvas { padding: 18px 22px; overflow-y: auto; background: #fff; }
+  .fb-canvas-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--line-soft); }
+  .fb-question { padding: 12px 14px; background: #fff; border: 1px solid var(--line-soft); border-radius: 6px; margin-bottom: 8px; cursor: pointer; transition: border-color 0.12s, box-shadow 0.12s; }
+  .fb-question:hover { border-color: var(--accent); }
+  .fb-question.selected { border: 2px solid var(--accent); padding: 11px 13px; background: #F0F6FB; }
+  .fb-q-head { display: flex; align-items: center; gap: 10px; }
+  .fb-q-num { font-family: ui-monospace, monospace; font-size: 11px; color: var(--text-faint); width: 22px; }
+  .fb-q-title { flex: 1; font-size: 13px; font-weight: 600; color: var(--navy); }
+  .fb-q-type { font-size: 10.5px; padding: 2px 8px; background: #F4F6F9; color: var(--text-soft); border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+  .fb-q-required { font-size: 10px; color: var(--err); margin-left: 4px; font-weight: 600; }
+  .fb-inspector { background: #FAFBFD; border-left: 1px solid var(--line-soft); padding: 16px 18px; overflow-y: auto; }
+  .fb-inspector-section { font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-faint); font-weight: 600; margin: 14px 0 8px; }
+  .fb-inspector-section:first-child { margin-top: 0; }
+  .fb-add-zone { border: 2px dashed var(--line); border-radius: 6px; padding: 18px; text-align: center; color: var(--text-faint); font-size: 12px; margin-top: 10px; cursor: pointer; }
+  .fb-add-zone:hover { border-color: var(--accent); color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .fb-shell { grid-template-columns: 1fr; }
+    .fb-palette, .fb-inspector { border: none; border-bottom: 1px solid var(--line-soft); }
+    .public-features { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -1086,53 +1166,61 @@
     <div class="nav-group">Cover</div>
     <div class="nav-item" data-screen="0"><span class="nav-num">00</span> Overview &amp; Scope</div>
 
+    <div class="nav-group">Public Funnel</div>
+    <div class="nav-item" data-screen="1"><span class="nav-num">01</span> Public Landing</div>
+    <div class="nav-item" data-screen="2"><span class="nav-num">02</span> Initial Inquiry Form</div>
+    <div class="nav-item" data-screen="3"><span class="nav-num">03</span> Check Your Email</div>
+    <div class="nav-item" data-screen="4"><span class="nav-num">04</span> Magic Link (Email + SMS)</div>
+    <div class="nav-item" data-screen="5"><span class="nav-num">05</span> Link Expired</div>
+
     <div class="nav-group">New Patient Advisor</div>
-    <div class="nav-item" data-screen="1"><span class="nav-num">01</span> Triage Dashboard</div>
-    <div class="nav-item" data-screen="2"><span class="nav-num">02</span> New Lead Intake</div>
-    <div class="nav-item" data-screen="3"><span class="nav-num">03</span> Lead Detail</div>
-    <div class="nav-item" data-screen="4"><span class="nav-num">04</span> One-Click Booking</div>
-    <div class="nav-item" data-screen="5"><span class="nav-num">05</span> Send Onboarding Packet</div>
-    <div class="nav-item" data-screen="6"><span class="nav-num">06</span> Eligibility Console</div>
-    <div class="nav-item" data-screen="7"><span class="nav-num">07</span> Drop / No-Show</div>
+    <div class="nav-item" data-screen="6"><span class="nav-num">06</span> Triage Dashboard</div>
+    <div class="nav-item" data-screen="7"><span class="nav-num">07</span> New Lead Intake</div>
+    <div class="nav-item" data-screen="8"><span class="nav-num">08</span> Lead Detail</div>
+    <div class="nav-item" data-screen="9"><span class="nav-num">09</span> One-Click Booking</div>
+    <div class="nav-item" data-screen="10"><span class="nav-num">10</span> Send Onboarding Packet</div>
+    <div class="nav-item" data-screen="11"><span class="nav-num">11</span> Eligibility Console</div>
+    <div class="nav-item" data-screen="12"><span class="nav-num">12</span> Drop / No-Show</div>
 
     <div class="nav-group">Patient Portal</div>
-    <div class="nav-item" data-screen="8"><span class="nav-num">08</span> Welcome &amp; Verify</div>
-    <div class="nav-item" data-screen="9"><span class="nav-num">09</span> Onboarding Checklist</div>
-    <div class="nav-item" data-screen="10"><span class="nav-num">10</span> Demographics</div>
-    <div class="nav-item" data-screen="11"><span class="nav-num">11</span> Medical History</div>
-    <div class="nav-item" data-screen="12"><span class="nav-num">12</span> Reason for Visit</div>
-    <div class="nav-item" data-screen="13"><span class="nav-num">13</span> Consents</div>
-    <div class="nav-item" data-screen="14"><span class="nav-num">14</span> ID Upload + OCR</div>
-    <div class="nav-item" data-screen="15"><span class="nav-num">15</span> Insurance Upload + OCR</div>
-    <div class="nav-item" data-screen="16"><span class="nav-num">16</span> SPD / EOC Upload</div>
-    <div class="nav-item" data-screen="17"><span class="nav-num">17</span> Pharmacy &amp; Supplements</div>
-    <div class="nav-item" data-screen="18"><span class="nav-num">18</span> Pre-Visit Confirmation</div>
-    <div class="nav-item" data-screen="19"><span class="nav-num">19</span> Save &amp; Resume</div>
+    <div class="nav-item" data-screen="13"><span class="nav-num">13</span> Welcome &amp; Verify</div>
+    <div class="nav-item" data-screen="14"><span class="nav-num">14</span> Onboarding Checklist</div>
+    <div class="nav-item" data-screen="15"><span class="nav-num">15</span> Demographics</div>
+    <div class="nav-item" data-screen="16"><span class="nav-num">16</span> Medical History</div>
+    <div class="nav-item" data-screen="17"><span class="nav-num">17</span> Reason for Visit</div>
+    <div class="nav-item" data-screen="18"><span class="nav-num">18</span> Consents</div>
+    <div class="nav-item" data-screen="19"><span class="nav-num">19</span> ID Upload + OCR</div>
+    <div class="nav-item" data-screen="20"><span class="nav-num">20</span> Insurance Upload + OCR</div>
+    <div class="nav-item" data-screen="21"><span class="nav-num">21</span> SPD / EOC Upload</div>
+    <div class="nav-item" data-screen="22"><span class="nav-num">22</span> Pharmacy &amp; Supplements</div>
+    <div class="nav-item" data-screen="23"><span class="nav-num">23</span> Pre-Visit Confirmation</div>
+    <div class="nav-item" data-screen="24"><span class="nav-num">24</span> Save &amp; Resume</div>
 
     <div class="nav-group">Front Desk</div>
-    <div class="nav-item" data-screen="20"><span class="nav-num">20</span> Today's Schedule</div>
-    <div class="nav-item" data-screen="21"><span class="nav-num">21</span> Patient Readiness</div>
-    <div class="nav-item" data-screen="22"><span class="nav-num">22</span> Walk-In Registration</div>
-    <div class="nav-item" data-screen="23"><span class="nav-num">23</span> Check-In Confirmation</div>
+    <div class="nav-item" data-screen="25"><span class="nav-num">25</span> Today's Schedule</div>
+    <div class="nav-item" data-screen="26"><span class="nav-num">26</span> Patient Readiness</div>
+    <div class="nav-item" data-screen="27"><span class="nav-num">27</span> Walk-In Registration</div>
+    <div class="nav-item" data-screen="28"><span class="nav-num">28</span> Check-In Confirmation</div>
 
     <div class="nav-group">Kiosk</div>
-    <div class="nav-item" data-screen="24"><span class="nav-num">24</span> Welcome / Idle</div>
-    <div class="nav-item" data-screen="25"><span class="nav-num">25</span> Identification</div>
-    <div class="nav-item" data-screen="26"><span class="nav-num">26</span> Pending Items</div>
-    <div class="nav-item" data-screen="27"><span class="nav-num">27</span> Re-Signature</div>
-    <div class="nav-item" data-screen="28"><span class="nav-num">28</span> Check-In Complete</div>
-    <div class="nav-item" data-screen="29"><span class="nav-num">29</span> Kiosk Error State</div>
+    <div class="nav-item" data-screen="29"><span class="nav-num">29</span> Welcome / Idle</div>
+    <div class="nav-item" data-screen="30"><span class="nav-num">30</span> Identification</div>
+    <div class="nav-item" data-screen="31"><span class="nav-num">31</span> Pending Items</div>
+    <div class="nav-item" data-screen="32"><span class="nav-num">32</span> Re-Signature</div>
+    <div class="nav-item" data-screen="33"><span class="nav-num">33</span> Check-In Complete</div>
+    <div class="nav-item" data-screen="34"><span class="nav-num">34</span> Kiosk Error State</div>
 
     <div class="nav-group">Remote MA</div>
-    <div class="nav-item" data-screen="30"><span class="nav-num">30</span> Pre-Visit Queue</div>
-    <div class="nav-item" data-screen="31"><span class="nav-num">31</span> Pre-Visit Chart</div>
-    <div class="nav-item" data-screen="32"><span class="nav-num">32</span> Flag for Provider</div>
+    <div class="nav-item" data-screen="35"><span class="nav-num">35</span> Pre-Visit Queue</div>
+    <div class="nav-item" data-screen="36"><span class="nav-num">36</span> Pre-Visit Chart</div>
+    <div class="nav-item" data-screen="37"><span class="nav-num">37</span> Flag for Provider</div>
 
     <div class="nav-group">Shared / Admin</div>
-    <div class="nav-item" data-screen="33"><span class="nav-num">33</span> Audit Log</div>
-    <div class="nav-item" data-screen="34"><span class="nav-num">34</span> Template Editor</div>
-    <div class="nav-item" data-screen="35"><span class="nav-num">35</span> Notification Settings</div>
-    <div class="nav-item" data-screen="36"><span class="nav-num">36</span> System States</div>
+    <div class="nav-item" data-screen="38"><span class="nav-num">38</span> Audit Log</div>
+    <div class="nav-item" data-screen="39"><span class="nav-num">39</span> Template Editor</div>
+    <div class="nav-item" data-screen="40"><span class="nav-num">40</span> Notification Settings</div>
+    <div class="nav-item" data-screen="41"><span class="nav-num">41</span> System States</div>
+    <div class="nav-item" data-screen="42"><span class="nav-num">42</span> Form Builder</div>
   </aside>
 
   <!-- ============== MAIN ============== -->
@@ -1143,7 +1231,7 @@
         <div class="top-title" id="topTitle">Overview &amp; Scope</div>
       </div>
       <div style="text-align:right;">
-        <div class="top-screen-id" id="topScreenId">Screen 00 / 36</div>
+        <div class="top-screen-id" id="topScreenId">Screen 00 / 42</div>
         <div class="top-meta" id="topRole">Cover</div>
       </div>
     </div>
@@ -1156,7 +1244,7 @@
 <div class="screen active" id="screen-0">
   <div class="cover">
     <h1>Module A · Patient Intake &amp; Onboarding</h1>
-    <div class="sub">Functional wireframe · 36 screens across 6 functional areas · For client review</div>
+    <div class="sub">Functional wireframe · 42 screens across 7 functional areas · For client review</div>
 
     <div class="meta-grid">
       <div>
@@ -1216,15 +1304,326 @@
   <div class="card" style="margin-top:18px;">
     <div class="seg-divider" style="margin-top:0">How to use this document</div>
     <div style="font-size:13px; line-height:1.7;">
-      Use the left navigation to walk through all 36 screens in order, or jump directly to a functional area.
+      Use the left navigation to walk through all 42 screens in order, or jump directly to a functional area.
       Each screen shows the wireframe layout, the role(s) involved, and the functional requirement(s) it satisfies.
       All copy, data, and visuals shown are illustrative — final styling, content, and validation rules will be defined during the build phase.
     </div>
   </div>
 </div>
 
-<!-- ===================================== SCREEN 1: TRIAGE DASHBOARD (FUNCTIONAL) ===================================== -->
+<!-- ===================================== SCREEN 1: PUBLIC LANDING ===================================== -->
 <div class="screen" id="screen-1">
+  <div class="frame">
+    <div class="frame-titlebar">
+      <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+      <div class="frame-url">helixona.com/become-a-patient</div>
+    </div>
+    <div class="frame-body" style="padding: 0; min-height: 580px;">
+      <div class="public-page">
+        <div class="public-nav">
+          <div class="public-nav-logo">Helixona</div>
+          <div class="public-nav-links">
+            <a>About</a><a>Services</a><a>Approach</a><a>Contact</a>
+          </div>
+          <div class="public-nav-cta">Become a patient</div>
+        </div>
+
+        <div class="public-hero">
+          <div class="public-eyebrow">Now accepting new patients</div>
+          <h1 class="public-h1">Functional medicine that <strong>finds the root cause</strong>.</h1>
+          <p class="public-lede">
+            Helixona is a functional medicine clinic in Irvine, California specializing in chronic fatigue,
+            post-COVID syndrome, autoimmune conditions, and IV nutrient therapy. Most PPO plans accepted as out-of-network.
+          </p>
+          <button class="public-cta" data-action="goto" data-target="2">Start your intake →</button>
+          <div class="public-cta-sub">Takes about 5 minutes · No account required</div>
+        </div>
+
+        <div class="public-features">
+          <div class="public-feature">
+            <div class="public-feature-ico">⚕</div>
+            <div class="public-feature-title">Comprehensive root-cause workup</div>
+            <div class="public-feature-body">
+              We don't manage symptoms — we trace them. Functional labs, structured timeline,
+              and systems-based assessment for chronic and complex conditions.
+            </div>
+          </div>
+          <div class="public-feature">
+            <div class="public-feature-ico">∞</div>
+            <div class="public-feature-title">In-clinic IV nutrient therapy</div>
+            <div class="public-feature-body">
+              Six infusion chairs onsite. NAD+, Myers cocktail, glutathione, high-dose Vitamin C,
+              and custom protocols administered under provider supervision.
+            </div>
+          </div>
+          <div class="public-feature">
+            <div class="public-feature-ico">$</div>
+            <div class="public-feature-title">Out-of-network with most PPOs</div>
+            <div class="public-feature-body">
+              We submit out-of-network claims to Anthem, Blue Shield, UnitedHealthcare, and Cigna on your behalf.
+              Cash-only and Medicare options also available.
+            </div>
+          </div>
+        </div>
+
+        <div class="public-foot">
+          <div>114 Pacifica, Suite 130, Irvine CA 92618</div>
+          <div>© Helixona, Inc.</div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 18px;">
+        <strong>Wireframe note:</strong> This is the public website page that replaces the current external Typeform.
+        The "Start your intake" button takes the patient directly into the native Initial Inquiry Form (screen 02),
+        creating a Prospect record inside the EHR rather than depending on a third-party form provider.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 2: INITIAL INQUIRY FORM ===================================== -->
+<div class="screen" id="screen-2">
+  <div class="phone-frame">
+    <div class="phone-bar">
+      <span>9:41</span><span>helixona.com</span><span>•••</span>
+    </div>
+    <div class="phone-body" style="padding: 20px 18px;">
+
+      <div style="text-align:center; padding: 4px 0 14px;">
+        <div style="font-size: 16px; font-weight: 600; color: var(--navy);">Welcome to Helixona</div>
+        <div style="font-size: 11.5px; color: var(--text-soft); margin-top: 3px;">Become a patient · About 5 min</div>
+      </div>
+
+      <div class="inquiry-progress"><div class="inquiry-progress-fill" style="width: 70%;"></div></div>
+
+      <!-- Q1 · Consent -->
+      <div class="inquiry-step">
+        <div class="inquiry-q"><span class="inquiry-num">1</span>I give my consent to receive text messages, emails, and phone calls from Helixona. I understand this consent can be revoked at any time. <span style="color: var(--err);">*</span></div>
+        <div class="inquiry-help">At Helixona, we stay in close communication with our patients to support their healing journey.</div>
+        <label class="inquiry-choice selected"><span class="letter">A</span>YES</label>
+        <label class="inquiry-choice"><span class="letter">B</span>NO</label>
+      </div>
+
+      <!-- Q2 · Contact info -->
+      <div class="inquiry-step">
+        <div class="inquiry-q"><span class="inquiry-num">2</span>Contact Information <span style="color: var(--err);">*</span></div>
+        <div class="inquiry-help">Please provide your full contact information.</div>
+        <div class="field" style="margin-top: 10px;">
+          <label class="field-label">Your full name *</label>
+          <input class="field-input" placeholder="First Last" />
+        </div>
+        <div class="field">
+          <label class="field-label">Date of birth (Month, Day, Year) *</label>
+          <input class="field-input" placeholder="MM / DD / YYYY" />
+        </div>
+        <div class="field">
+          <label class="field-label">Best contact phone number</label>
+          <input class="field-input" placeholder="🇺🇸  (___) ___-____" />
+        </div>
+        <div class="field">
+          <label class="field-label">Email address</label>
+          <input class="field-input" placeholder="name@example.com" />
+        </div>
+      </div>
+
+      <!-- Q3 · Home address -->
+      <div class="inquiry-step">
+        <div class="inquiry-q"><span class="inquiry-num">3</span>Home Address</div>
+        <div class="inquiry-help">Used for claim submission and clinic correspondence.</div>
+        <div class="field" style="margin-top: 10px;"><label class="field-label">Address</label><input class="field-input" placeholder="Street address" /></div>
+        <div class="field"><label class="field-label">Address line 2</label><input class="field-input" placeholder="Apt / Suite (optional)" /></div>
+        <div class="field-row">
+          <div class="field"><label class="field-label">City</label><input class="field-input" /></div>
+          <div class="field"><label class="field-label">State</label><input class="field-input" style="text-transform: uppercase;" placeholder="CA" /></div>
+        </div>
+        <div class="field"><label class="field-label">Zip code</label><input class="field-input" placeholder="92618" /></div>
+      </div>
+
+      <!-- Q4 · What brings you in -->
+      <div class="inquiry-step">
+        <div class="inquiry-q"><span class="inquiry-num">4</span>What brings you in?</div>
+        <div class="inquiry-help">A sentence or two is fine. We'll go deeper later.</div>
+        <textarea class="field-input" rows="3" style="margin-top: 8px;" placeholder="e.g. Chronic fatigue since COVID, looking for a real workup beyond 'it's anxiety'..."></textarea>
+      </div>
+
+      <!-- Q5 · Insurance type -->
+      <div class="inquiry-step">
+        <div class="inquiry-q"><span class="inquiry-num">5</span>What type of health insurance do you currently have? <span style="color: var(--err);">*</span></div>
+        <label class="inquiry-choice"><span class="letter">A</span>PPO Insurance</label>
+        <label class="inquiry-choice"><span class="letter">B</span>HMO Insurance</label>
+        <label class="inquiry-choice selected"><span class="letter">C</span>Medicare with PPO</label>
+        <label class="inquiry-choice"><span class="letter">D</span>Medicare with HMO</label>
+        <label class="inquiry-choice"><span class="letter">E</span>Medicare with Medicaid (Medi-Medi)</label>
+        <label class="inquiry-choice"><span class="letter">F</span>Medi-Cal / Medicaid</label>
+        <label class="inquiry-choice"><span class="letter">G</span>Uninsured (Cash Only)</label>
+        <label class="inquiry-choice"><span class="letter">H</span>Other Type of Coverage</label>
+      </div>
+
+      <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 8px;" data-action="submit-inquiry">Submit &amp; get your link →</button>
+      <div style="font-size: 10.5px; color: var(--text-faint); text-align: center; margin-top: 10px; line-height: 1.5;">
+        By submitting, you agree that Helixona may contact you at the email and phone provided.
+        We never share your information.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 18px;">
+    <strong>Wireframe note:</strong> This replaces the Typeform at <code>form.typeform.com/to/xNOaiQME</code>.
+    On submit, the system creates a <strong>Prospect</strong> record in the EHR (not yet a Patient), sends a magic
+    link by email and SMS (7-day validity), and surfaces the new lead to Marie on the Triage Dashboard.
+    Detailed clinical questions (medical history, allergies, medications) come later, after the patient clicks the magic link.
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 3: CHECK YOUR EMAIL ===================================== -->
+<div class="screen" id="screen-3">
+  <div class="phone-frame">
+    <div class="phone-bar"><span>9:42</span><span>helixona.com</span><span>•••</span></div>
+    <div class="phone-body" style="text-align: center; padding: 40px 24px;">
+
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: #EAF6EE; color: var(--ok); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 28px;">✓</div>
+
+      <div style="font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 8px;">Check your email and text</div>
+      <div style="font-size: 13px; color: var(--text-soft); margin-bottom: 28px; line-height: 1.6;">
+        We sent your secure intake link to:
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid var(--line-soft); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; text-align: left;">
+        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-faint); font-weight: 600;">Email</div>
+        <div style="font-size: 13.5px; color: var(--navy); font-weight: 500; margin-top: 2px;">carlos@example.com</div>
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid var(--line-soft); border-radius: 8px; padding: 14px 16px; margin-bottom: 22px; text-align: left;">
+        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-faint); font-weight: 600;">Text message</div>
+        <div style="font-size: 13.5px; color: var(--navy); font-weight: 500; margin-top: 2px;">+1 (949) 555-0184</div>
+      </div>
+
+      <button class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 10px;" data-action="resend-magic-link">Resend link</button>
+      <button class="btn btn-ghost" style="width: 100%; font-size: 12px;">Use a different email or phone</button>
+
+      <div class="callout" style="margin-top: 24px; text-align: left;">
+        <strong>Your link expires in 7 days.</strong> If you don't see the email, check your spam folder.
+        You can pause and resume your intake any time using the same link.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-ok" style="margin-top: 18px;">
+    <strong>Marie's view (parallel):</strong> A new Prospect record now appears at the top of the Triage Dashboard
+    (screen 06) with status "Magic link sent — awaiting patient." If the patient hasn't clicked within 24 hours, Marie sees
+    a follow-up flag and can place a courtesy call.
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 4: MAGIC LINK PREVIEW (EMAIL + SMS) ===================================== -->
+<div class="screen" id="screen-4">
+  <div class="grid-2" style="gap: 24px; align-items: start;">
+
+    <!-- EMAIL PREVIEW -->
+    <div>
+      <div class="seg-divider" style="margin-top:0;">Email</div>
+      <div class="msg-preview">
+        <div class="msg-header">
+          <div class="msg-header-row"><div class="msg-header-lbl">From</div><div class="msg-header-val"><strong>Helixona</strong> &lt;hello@helixona.com&gt;</div></div>
+          <div class="msg-header-row"><div class="msg-header-lbl">To</div><div class="msg-header-val">carlos@example.com</div></div>
+          <div class="msg-header-row"><div class="msg-header-lbl">Subject</div><div class="msg-header-val"><strong>Your Helixona intake link is ready</strong></div></div>
+        </div>
+        <div class="msg-body">
+          <div style="font-size: 22px; font-weight: 600; color: var(--navy); margin-bottom: 14px;">Helixona</div>
+          <p style="margin: 0 0 12px;">Hi Carlos,</p>
+          <p style="margin: 0 0 12px;">
+            Thank you for reaching out to Helixona. We received your inquiry and want to learn a bit more
+            about your health so we can prepare for your visit.
+          </p>
+          <p style="margin: 0 0 4px;">
+            Tap below to continue your intake — it takes about 10 minutes, and you can pause and pick up where you left off.
+          </p>
+          <a class="msg-cta-btn" href="#">Continue my intake →</a>
+          <p style="margin: 0 0 12px; font-size: 11.5px; color: var(--text-soft);">
+            Or paste this link in your browser:<br>
+            <span style="font-family: ui-monospace, monospace; word-break: break-all; color: var(--accent);">https://helixona.app/i/a8f2-3392-bc41</span>
+          </p>
+          <p style="margin: 20px 0 4px;">Looking forward to working with you,</p>
+          <p style="margin: 0;"><strong>The Helixona team</strong></p>
+        </div>
+        <div class="msg-foot">
+          This link expires in 7 days. If you didn't request it, you can safely ignore this email.<br>
+          Helixona, Inc. · 114 Pacifica, Suite 130, Irvine CA 92618 · <a style="color: var(--text-faint);">Unsubscribe</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SMS PREVIEW -->
+    <div>
+      <div class="seg-divider" style="margin-top:0;">Text message</div>
+      <div class="phone-frame" style="width: 320px;">
+        <div class="phone-bar"><span>9:42</span><span>Messages</span><span>•••</span></div>
+        <div class="phone-body" style="background: #F4F6F9; padding: 18px 14px;">
+          <div style="font-size: 11px; color: var(--text-faint); text-align: center; margin-bottom: 12px;">Today 9:42 AM</div>
+          <div style="font-size: 11px; color: var(--text-soft); text-align: center; margin-bottom: 6px;">Helixona</div>
+          <div class="sms-bubble">
+            Helixona: Thanks for reaching out! Continue your intake here (expires in 7 days, pause &amp; resume anytime):
+            <br><br>https://helixona.app/i/a8f2-3392-bc41
+            <br><br>Reply STOP to opt out. Reply HELP for help.
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 18px;">
+        <div class="seg-divider" style="margin-top: 0;">Compliance notes</div>
+        <div style="font-size: 12px; line-height: 1.7;">
+          ▸ <strong>TCPA / CTIA compliance:</strong> STOP and HELP commands are required by US carriers for any opt-in SMS message.<br>
+          ▸ <strong>HIPAA:</strong> Magic links do not contain PHI; clinical content is gated behind the verified link.<br>
+          ▸ <strong>Token security:</strong> Single-use signed token, 7-day TTL, audit-logged on every use.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 18px;">
+    <strong>Wireframe note:</strong> Both messages are sent within ~30 seconds of the patient submitting the inquiry form (screen 02).
+    The link in both is the same — the patient picks whichever they prefer. Email branding will be finalized during the build phase.
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 5: LINK EXPIRED / INVALID ===================================== -->
+<div class="screen" id="screen-5">
+  <div class="phone-frame">
+    <div class="phone-bar"><span>9:41</span><span>helixona.app</span><span>•••</span></div>
+    <div class="phone-body" style="text-align: center; padding: 40px 24px;">
+
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: #FEF3C7; color: var(--warn); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 28px;">⏱</div>
+
+      <div style="font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 10px;">Your link has expired</div>
+      <div style="font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 22px;">
+        For your security, intake links expire after 7 days.
+        <strong style="color: var(--navy);">All the answers you saved so far are safe.</strong>
+      </div>
+
+      <div style="background: #F8FAFC; border: 1px solid var(--line-soft); border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; text-align: left;">
+        <div style="font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-faint); font-weight: 600;">We have on file</div>
+        <div style="font-size: 13px; color: var(--navy); margin-top: 4px;">carlos@example.com</div>
+        <div style="font-size: 13px; color: var(--navy);">+1 (949) 555-0184</div>
+      </div>
+
+      <button class="btn btn-primary btn-lg" style="width: 100%; margin-bottom: 10px;" data-action="resend-magic-link">Send me a new link</button>
+      <button class="btn btn-ghost" style="width: 100%; font-size: 12px;">My email or phone has changed</button>
+
+      <div class="callout" style="margin-top: 22px; text-align: left; font-size: 12px;">
+        Prefer to talk? Call us at <strong>(949) 555-HELIX</strong> Mon–Fri, 9 AM – 5 PM Pacific.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 18px;">
+    <strong>Fail-loudly principle:</strong> Generic "ERR_TOKEN_INVALID" pages send patients elsewhere.
+    This screen explains what happened, confirms their progress is preserved, and lets them get a new link in one tap.
+    Counts as resolving the silent-failure failure mode at the very front of the funnel.
+  </div>
+</div>
+
+<!-- ===================================== SCREEN 6: TRIAGE DASHBOARD ===================================== -->
+<div class="screen" id="screen-6">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1291,7 +1690,7 @@
 </div>
 
 <!-- ===================================== SCREEN 2: NEW LEAD INTAKE ===================================== -->
-<div class="screen" id="screen-2">
+<div class="screen" id="screen-7">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1340,14 +1739,14 @@
       <div style="display:flex; gap:10px; margin-top:18px;">
         <button class="btn btn-primary" data-action="save-new-lead-static">Save lead</button>
         <button class="btn" data-action="save-and-send-packet-static">Save &amp; send onboarding packet →</button>
-        <button class="btn btn-ghost" data-action="goto" data-target="1">Cancel</button>
+        <button class="btn btn-ghost" data-action="goto" data-target="6">Cancel</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- ===================================== SCREEN 3: LEAD DETAIL ===================================== -->
-<div class="screen" id="screen-3">
+<div class="screen" id="screen-8">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1432,7 +1831,7 @@
 </div>
 
 <!-- ===================================== SCREEN 4: ONE-CLICK BOOKING ===================================== -->
-<div class="screen" id="screen-4">
+<div class="screen" id="screen-9">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1509,7 +1908,7 @@
 </div>
 
 <!-- ===================================== SCREEN 5: SEND ONBOARDING PACKET ===================================== -->
-<div class="screen" id="screen-5">
+<div class="screen" id="screen-10">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1573,7 +1972,7 @@
 </div>
 
 <!-- ===================================== SCREEN 6: ELIGIBILITY CONSOLE ===================================== -->
-<div class="screen" id="screen-6">
+<div class="screen" id="screen-11">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1633,7 +2032,7 @@
 </div>
 
 <!-- ===================================== SCREEN 7: DROP / NO-SHOW REASON ===================================== -->
-<div class="screen" id="screen-7">
+<div class="screen" id="screen-12">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -1682,7 +2081,7 @@
 
         <div style="display:flex; gap:10px;">
           <button class="btn btn-primary" data-action="mark-dropped">Mark as dropped</button>
-          <button class="btn btn-ghost" data-action="goto" data-target="3">Cancel</button>
+          <button class="btn btn-ghost" data-action="goto" data-target="8">Cancel</button>
         </div>
       </div>
     </div>
@@ -1690,7 +2089,7 @@
 </div>
 
 <!-- ===================================== SCREEN 8: PATIENT WELCOME / VERIFY ===================================== -->
-<div class="screen" id="screen-8">
+<div class="screen" id="screen-13">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:41</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1716,7 +2115,7 @@
 </div>
 
 <!-- ===================================== SCREEN 9: ONBOARDING CHECKLIST ===================================== -->
-<div class="screen" id="screen-9">
+<div class="screen" id="screen-14">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:42</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1748,7 +2147,7 @@
 </div>
 
 <!-- ===================================== SCREEN 10: DEMOGRAPHICS ===================================== -->
-<div class="screen" id="screen-10">
+<div class="screen" id="screen-15">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:43</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1773,7 +2172,7 @@
 </div>
 
 <!-- ===================================== SCREEN 11: MEDICAL HISTORY ===================================== -->
-<div class="screen" id="screen-11">
+<div class="screen" id="screen-16">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:45</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1813,7 +2212,7 @@
 </div>
 
 <!-- ===================================== SCREEN 12: REASON FOR VISIT ===================================== -->
-<div class="screen" id="screen-12">
+<div class="screen" id="screen-17">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:48</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1846,7 +2245,7 @@
 </div>
 
 <!-- ===================================== SCREEN 13: CONSENTS ===================================== -->
-<div class="screen" id="screen-13">
+<div class="screen" id="screen-18">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:51</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1876,7 +2275,7 @@
 </div>
 
 <!-- ===================================== SCREEN 14: ID UPLOAD + OCR ===================================== -->
-<div class="screen" id="screen-14">
+<div class="screen" id="screen-19">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:54</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1914,7 +2313,7 @@
 </div>
 
 <!-- ===================================== SCREEN 15: INSURANCE UPLOAD + OCR ===================================== -->
-<div class="screen" id="screen-15">
+<div class="screen" id="screen-20">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:56</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1956,7 +2355,7 @@
 </div>
 
 <!-- ===================================== SCREEN 16: SPD/EOC UPLOAD ===================================== -->
-<div class="screen" id="screen-16">
+<div class="screen" id="screen-21">
   <div class="phone-frame">
     <div class="phone-bar"><span>9:58</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -1988,7 +2387,7 @@
 </div>
 
 <!-- ===================================== SCREEN 17: PHARMACY & SUPPLEMENTS ===================================== -->
-<div class="screen" id="screen-17">
+<div class="screen" id="screen-22">
   <div class="phone-frame">
     <div class="phone-bar"><span>10:01</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -2011,7 +2410,7 @@
 </div>
 
 <!-- ===================================== SCREEN 18: PRE-VISIT CONFIRMATION ===================================== -->
-<div class="screen" id="screen-18">
+<div class="screen" id="screen-23">
   <div class="phone-frame">
     <div class="phone-bar"><span>10:03</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -2045,7 +2444,7 @@
 </div>
 
 <!-- ===================================== SCREEN 19: SAVE & RESUME ===================================== -->
-<div class="screen" id="screen-19">
+<div class="screen" id="screen-24">
   <div class="phone-frame">
     <div class="phone-bar"><span>4:18</span><span>● ● ●</span></div>
     <div class="phone-body">
@@ -2072,14 +2471,14 @@
         We'll send you a reminder tomorrow at 9 AM. Your link is good until your appointment.
       </div>
 
-      <button class="btn btn-primary btn-lg" data-action="goto" data-target="9" style="width:100%; margin-top:14px;">Continue now</button>
-      <button class="btn btn-ghost" data-action="goto" data-target="8" style="width:100%; font-size:12px; margin-top:6px;">Close</button>
+      <button class="btn btn-primary btn-lg" data-action="goto" data-target="14" style="width:100%; margin-top:14px;">Continue now</button>
+      <button class="btn btn-ghost" data-action="goto" data-target="13" style="width:100%; font-size:12px; margin-top:6px;">Close</button>
     </div>
   </div>
 </div>
 
 <!-- ===================================== SCREEN 20: SCHEDULE (DAY / WEEK / LIST) ===================================== -->
-<div class="screen" id="screen-20">
+<div class="screen" id="screen-25">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2172,7 +2571,7 @@
 </div>
 
 <!-- ===================================== SCREEN 21: PATIENT READINESS DETAIL ===================================== -->
-<div class="screen" id="screen-21">
+<div class="screen" id="screen-26">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2226,7 +2625,7 @@
 </div>
 
 <!-- ===================================== SCREEN 22: WALK-IN REGISTRATION ===================================== -->
-<div class="screen" id="screen-22">
+<div class="screen" id="screen-27">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2283,7 +2682,7 @@
 </div>
 
 <!-- ===================================== SCREEN 23: CHECK-IN CONFIRMATION ===================================== -->
-<div class="screen" id="screen-23">
+<div class="screen" id="screen-28">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2330,7 +2729,7 @@
 </div>
 
 <!-- ===================================== SCREEN 24: KIOSK WELCOME ===================================== -->
-<div class="screen" id="screen-24">
+<div class="screen" id="screen-29">
   <div class="kiosk-frame">
     <div style="font-size:13px; letter-spacing:3px; color:rgba(255,255,255,0.5); margin-bottom:20px;">HELIXONA</div>
     <div class="kiosk-title">Welcome</div>
@@ -2343,7 +2742,7 @@
 </div>
 
 <!-- ===================================== SCREEN 25: KIOSK IDENTIFICATION ===================================== -->
-<div class="screen" id="screen-25">
+<div class="screen" id="screen-30">
   <div class="kiosk-frame">
     <div class="kiosk-title" style="font-size:28px;">Find your appointment</div>
     <div class="kiosk-sub">Enter your date of birth, or scan the QR code from your text message</div>
@@ -2384,7 +2783,7 @@
 </div>
 
 <!-- ===================================== SCREEN 26: KIOSK PENDING ITEMS ===================================== -->
-<div class="screen" id="screen-26">
+<div class="screen" id="screen-31">
   <div class="kiosk-frame" style="justify-content:flex-start; padding-top:60px;">
     <div style="width:100%; max-width:640px;">
       <div style="font-size:13px; letter-spacing:2px; color:rgba(255,255,255,0.5); margin-bottom:8px;">HI, DAVID</div>
@@ -2415,7 +2814,7 @@
 </div>
 
 <!-- ===================================== SCREEN 27: KIOSK RE-SIGNATURE ===================================== -->
-<div class="screen" id="screen-27">
+<div class="screen" id="screen-32">
   <div class="kiosk-frame" style="justify-content:flex-start; padding-top:50px; text-align:left;">
     <div style="width:100%; max-width:720px;">
       <div style="font-size:12px; letter-spacing:2px; color:rgba(255,255,255,0.5); margin-bottom:8px;">CONSENT 1 OF 2 · TREATMENT</div>
@@ -2441,7 +2840,7 @@
 </div>
 
 <!-- ===================================== SCREEN 28: KIOSK CHECK-IN COMPLETE ===================================== -->
-<div class="screen" id="screen-28">
+<div class="screen" id="screen-33">
   <div class="kiosk-frame">
     <div style="width:90px; height:90px; background:var(--ok); border-radius:50%; margin-bottom:24px; display:flex; align-items:center; justify-content:center; font-size:50px;">✓</div>
     <div class="kiosk-title">You're checked in</div>
@@ -2458,7 +2857,7 @@
 </div>
 
 <!-- ===================================== SCREEN 29: KIOSK ERROR STATE ===================================== -->
-<div class="screen" id="screen-29">
+<div class="screen" id="screen-34">
   <div class="kiosk-frame" style="background: #5C1F1F;">
     <div style="width:90px; height:90px; background:#fff; color:#5C1F1F; border-radius:50%; margin-bottom:24px; display:flex; align-items:center; justify-content:center; font-size:50px;">!</div>
     <div class="kiosk-title">We need a quick hand from the front desk</div>
@@ -2477,7 +2876,7 @@
 </div>
 
 <!-- ===================================== SCREEN 30: PRE-VISIT QUEUE (FUNCTIONAL) ===================================== -->
-<div class="screen" id="screen-30">
+<div class="screen" id="screen-35">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2527,7 +2926,7 @@
 </div>
 
 <!-- ===================================== SCREEN 31: PRE-VISIT CHART ===================================== -->
-<div class="screen" id="screen-31">
+<div class="screen" id="screen-36">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2603,7 +3002,7 @@
 </div>
 
 <!-- ===================================== SCREEN 32: FLAG FOR PROVIDER ===================================== -->
-<div class="screen" id="screen-32">
+<div class="screen" id="screen-37">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2659,7 +3058,7 @@
 </div>
 
 <!-- ===================================== SCREEN 33: AUDIT LOG (FUNCTIONAL) ===================================== -->
-<div class="screen" id="screen-33">
+<div class="screen" id="screen-38">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2705,7 +3104,7 @@
 </div>
 
 <!-- ===================================== SCREEN 34: TEMPLATE EDITOR ===================================== -->
-<div class="screen" id="screen-34">
+<div class="screen" id="screen-39">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2777,7 +3176,7 @@
 </div>
 
 <!-- ===================================== SCREEN 35: NOTIFICATION SETTINGS ===================================== -->
-<div class="screen" id="screen-35">
+<div class="screen" id="screen-40">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2854,7 +3253,7 @@
 </div>
 
 <!-- ===================================== SCREEN 36: SYSTEM STATES ===================================== -->
-<div class="screen" id="screen-36">
+<div class="screen" id="screen-41">
   <div class="frame">
     <div class="frame-titlebar">
       <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
@@ -2920,13 +3319,190 @@
   </div>
 </div>
 
+<!-- ===================================== SCREEN 42: FORM BUILDER ===================================== -->
+<div class="screen" id="screen-42">
+  <div class="frame">
+    <div class="frame-titlebar">
+      <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+      <div class="frame-url">helixona.app/admin/forms/intake-inquiry</div>
+    </div>
+    <div class="frame-body">
+      <div class="app-header">
+        <div>
+          <div class="app-logo">Helixona EHR · Admin</div>
+          <div class="app-logo-sub">Form Builder — Initial Inquiry Form</div>
+        </div>
+        <div class="app-user"><div class="avatar" style="background:#AD1457;">S</div> Shibani · Office Manager</div>
+      </div>
+
+      <div class="enc-status-bar" style="display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#F0F6FB; border:1px solid var(--line-soft); border-radius:6px; margin-bottom:14px; font-size:12px;">
+        <div>
+          Editing: <strong>Initial Inquiry Form</strong> ·
+          <span class="pill pill-warn">Draft v2.5</span> ·
+          Published v2.4 live since 2026-04-12
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-sm">Preview as patient</button>
+          <button class="btn btn-sm">Save as draft</button>
+          <button class="btn btn-sm btn-primary" data-action="publish-form">Publish v2.5</button>
+        </div>
+      </div>
+
+      <div class="fb-shell">
+        <!-- PALETTE -->
+        <div class="fb-palette">
+          <div class="fb-palette-section">Field types</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">T</div>Short text</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">¶</div>Long text</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">📅</div>Date</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">☎</div>Phone</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">@</div>Email</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">📍</div>Address</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">◉</div>Single choice</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">☑</div>Multi-select</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">Y/N</div>Yes / No</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">★</div>Rating</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">⤴</div>File upload</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">✍</div>Signature</div>
+
+          <div class="fb-palette-section">Layout</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">H</div>Section header</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">i</div>Help text</div>
+          <div class="fb-palette-item"><div class="fb-palette-icon">—</div>Divider</div>
+        </div>
+
+        <!-- CANVAS -->
+        <div class="fb-canvas">
+          <div class="fb-canvas-head">
+            <div>
+              <div style="font-size:13px; font-weight:600; color: var(--navy);">Initial Inquiry Form</div>
+              <div style="font-size:11.5px; color: var(--text-soft); margin-top:2px;">5 questions · Mobile-first · Used for public website applications</div>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-sm">Add page break</button>
+              <button class="btn btn-sm">Reorder</button>
+            </div>
+          </div>
+
+          <div class="fb-question">
+            <div class="fb-q-head">
+              <div class="fb-q-num">01</div>
+              <div class="fb-q-title">I give my consent to receive text messages, emails, and phone calls from Helixona<span class="fb-q-required">*</span></div>
+              <div class="fb-q-type">Yes/No</div>
+            </div>
+          </div>
+
+          <div class="fb-question selected">
+            <div class="fb-q-head">
+              <div class="fb-q-num">02</div>
+              <div class="fb-q-title">Contact Information<span class="fb-q-required">*</span></div>
+              <div class="fb-q-type">Group</div>
+            </div>
+            <div style="font-size:11.5px; color: var(--text-soft); margin: 8px 0 0 32px;">
+              ▸ Full name (short text, required) &nbsp; ▸ Date of birth (date, required) &nbsp; ▸ Phone (phone) &nbsp; ▸ Email (email)
+            </div>
+          </div>
+
+          <div class="fb-question">
+            <div class="fb-q-head">
+              <div class="fb-q-num">03</div>
+              <div class="fb-q-title">Home Address</div>
+              <div class="fb-q-type">Address</div>
+            </div>
+          </div>
+
+          <div class="fb-question">
+            <div class="fb-q-head">
+              <div class="fb-q-num">04</div>
+              <div class="fb-q-title">What brings you in?</div>
+              <div class="fb-q-type">Long text</div>
+            </div>
+          </div>
+
+          <div class="fb-question">
+            <div class="fb-q-head">
+              <div class="fb-q-num">05</div>
+              <div class="fb-q-title">What type of health insurance do you currently have?<span class="fb-q-required">*</span></div>
+              <div class="fb-q-type">Single choice</div>
+            </div>
+            <div style="font-size:11.5px; color: var(--text-soft); margin: 8px 0 0 32px;">
+              8 options · Conditional: if PPO / Medicare-PPO / Other → show insurance card upload (Q06)
+            </div>
+          </div>
+
+          <div class="fb-question" style="opacity: 0.85;">
+            <div class="fb-q-head">
+              <div class="fb-q-num">06</div>
+              <div class="fb-q-title">Upload front of insurance card</div>
+              <div class="fb-q-type">File upload</div>
+            </div>
+            <div style="font-size:11.5px; color: var(--text-soft); margin: 8px 0 0 32px;">
+              Conditional · Shown only if Q5 = PPO / Medicare with PPO / Other · 10 MB max
+            </div>
+          </div>
+
+          <div class="fb-add-zone" data-action="fb-add-question">+ Drag a field from the left or click here to add</div>
+        </div>
+
+        <!-- INSPECTOR -->
+        <div class="fb-inspector">
+          <div class="fb-inspector-section">Selected question</div>
+          <div style="font-size:11px; color: var(--text-faint); margin-bottom: 6px;">Question 02 of 6</div>
+          <div style="font-size:13px; font-weight: 600; color: var(--navy);">Contact Information</div>
+
+          <div class="fb-inspector-section">Label</div>
+          <input class="field-input" value="Contact Information" />
+
+          <div class="fb-inspector-section">Help text</div>
+          <input class="field-input" value="Please provide your full contact information." />
+
+          <div class="fb-inspector-section">Fields in this group</div>
+          <div style="font-size:12px; line-height:1.9;">
+            <div>▸ Full name <span style="color:var(--err);">*</span></div>
+            <div>▸ Date of birth <span style="color:var(--err);">*</span></div>
+            <div>▸ Phone</div>
+            <div>▸ Email</div>
+          </div>
+          <button class="btn btn-sm" style="margin-top:8px;">+ Add field</button>
+
+          <div class="fb-inspector-section">Maps to chart field</div>
+          <select class="field-input">
+            <option>patient.demographics (auto)</option>
+            <option>None — collected only</option>
+          </select>
+
+          <div class="fb-inspector-section">Conditional logic</div>
+          <div style="font-size: 11.5px; color: var(--text-soft); line-height: 1.6;">
+            Always shown · No conditions.
+          </div>
+          <button class="btn btn-sm" style="margin-top: 6px;">+ Add condition</button>
+
+          <div class="fb-inspector-section">Version history</div>
+          <div style="font-size: 11.5px; color: var(--text-soft); line-height: 1.7;">
+            v2.5 (draft) · today · You<br>
+            v2.4 · 2026-04-12 · Shibani<br>
+            v2.3 · 2026-02-28 · Shibani
+          </div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top: 18px;">
+        <strong>Why this matters:</strong> Changing what we ask new patients — adding a field, removing a question,
+        rewording a prompt, adjusting conditional logic — does not require a developer or a deploy. Shibani edits
+        the form here, previews it as a patient, and publishes when ready. The same engine drives the public Initial
+        Inquiry Form, in-portal forms, and any future intake variants.
+      </div>
+    </div>
+  </div>
+</div>
+
     </div><!-- /canvas-inner -->
     </div><!-- /canvas -->
 
     <!-- ============== FOOTER NAV ============== -->
     <div class="screen-foot">
       <div class="foot-info" id="footInfo">
-        <strong>Screen 00 of 36</strong> · Cover · Module A · Patient Intake &amp; Onboarding
+        <strong>Screen 00 of 42</strong> · Cover · Module A · Patient Intake &amp; Onboarding
       </div>
       <div class="nav-btns">
         <button class="btn" id="prevBtn">← Previous</button>
@@ -2976,6 +3552,46 @@
       purpose: "Sets up the wireframe document for client review. Establishes the boundaries of Module A, the six failure modes from discovery that this module resolves, the design principles applied, and the user roles the system serves.",
       who: "All stakeholders",
       when: "Reference page — read once before walking through screens"
+    },
+    {
+      title: "Public Landing",
+      role: "Patient (Public Website)",
+      eyebrow: "Public Funnel · Step 1 · First touch",
+      purpose: "Public-facing landing page at helixona.com/become-a-patient. Replaces the brochure-only website. Sets expectations about functional medicine, the clinic's services, and out-of-network insurance posture, then drives the prospective patient straight into the native inquiry form. The single CTA — Start your intake — is the only path forward.",
+      who: "Prospective patient (anyone on the public web)",
+      when: "First arrival on the public site, before any clinical relationship exists"
+    },
+    {
+      title: "Initial Inquiry Form",
+      role: "Patient (Public)",
+      eyebrow: "Public Funnel · Step 2 · Apply to the clinic",
+      purpose: "Native replacement for the current Typeform. Captures communications consent (TCPA-required as the first question), contact information, home address, a brief reason-for-visit, and insurance type — the minimum needed for Marie to triage the lead. On submit, the system creates a Prospect record in the EHR (not yet a Patient) and triggers the magic link.",
+      who: "Prospective patient",
+      when: "Immediately after tapping 'Start your intake'"
+    },
+    {
+      title: "Check Your Email",
+      role: "Patient (Public)",
+      eyebrow: "Public Funnel · Step 3 · Confirm channel",
+      purpose: "Confirmation screen shown right after submission. Shows the exact email and phone where the magic link was sent so the patient knows where to look, with one-tap resend and an option to use a different email or phone. Mentions the 7-day expiration and pause-and-resume capability.",
+      who: "Prospective patient",
+      when: "Immediately after the Initial Inquiry Form is submitted"
+    },
+    {
+      title: "Magic Link (Email + SMS)",
+      role: "System → Patient",
+      eyebrow: "Public Funnel · Step 4 · Delivery",
+      purpose: "Side-by-side preview of the email and SMS message the patient receives. Email comes from hello@helixona.com with a branded body and a single 'Continue my intake' button. SMS includes the secure link and the legally-required STOP and HELP commands. Both link to the same single-use signed token.",
+      who: "Prospective patient (recipient)",
+      when: "Within ~30 seconds of inquiry submission"
+    },
+    {
+      title: "Link Expired",
+      role: "Patient (Public)",
+      eyebrow: "Public Funnel · Failure path",
+      purpose: "Friendly error screen when the patient clicks an expired or invalid link. Explains what happened in plain language, confirms their saved progress is preserved, shows the email and phone on file, and offers a one-tap 'Send me a new link.' Resolves the silent-failure failure mode at the very front of the funnel.",
+      who: "Prospective patient",
+      when: "Anytime a token is past 7-day TTL, revoked, or already used"
     },
     {
       title: "Triage Dashboard",
@@ -3264,6 +3880,14 @@
       purpose: "Reusable UI patterns the whole module uses for empty data, loading, errors, success confirmations, inline validation, and permission denials. Implements the 'fail loudly, never silently' principle — the user always knows what's happening and what to do next.",
       who: "Applied automatically everywhere",
       when: "Whenever a screen would otherwise be empty, slow, or broken"
+    },
+    {
+      title: "Form Builder",
+      role: "Admin (Shibani)",
+      eyebrow: "Admin · Edit forms without code",
+      purpose: "Drag-and-drop form editor that powers every patient-facing form in Module A — starting with the Initial Inquiry Form on the public site. Three columns: a palette of field types on the left, the ordered list of questions in the middle, and a property inspector on the right. Versioned with preview-as-patient and publish controls so Shibani can iterate on what the clinic asks without a developer or a deploy.",
+      who: "Shibani (Office Manager) and authorized admins",
+      when: "Whenever intake questions need to change or new variants are needed"
     }
   ];
 
@@ -3309,9 +3933,9 @@
     const meta = META[idx];
     const numStr = String(idx).padStart(2, '0');
     document.getElementById('topTitle').textContent = meta.title;
-    document.getElementById('topScreenId').textContent = 'Screen ' + numStr + ' / 36';
+    document.getElementById('topScreenId').textContent = 'Screen ' + numStr + ' / 42';
     document.getElementById('topRole').textContent = meta.role;
-    document.getElementById('footInfo').innerHTML = '<strong>Screen ' + numStr + ' of 36</strong> · ' + meta.role + ' · ' + meta.title;
+    document.getElementById('footInfo').innerHTML = '<strong>Screen ' + numStr + ' of 42</strong> · ' + meta.role + ' · ' + meta.title;
 
     document.getElementById('prevBtn').disabled = (idx === 0);
     document.getElementById('nextBtn').disabled = (idx === total - 1);
@@ -3785,7 +4409,24 @@
       renderSchedule();
       toast('Jumped to today', 'Thursday, May 14, 2026', 'ok');
     },
-    'cal-next': () => { toast('Next week', 'May 18 – May 22, 2026', 'ok'); }
+    'cal-next': () => { toast('Next week', 'May 18 – May 22, 2026', 'ok'); },
+
+    // ---- PUBLIC FUNNEL ----
+    'submit-inquiry': () => {
+      toast('Inquiry received', 'Magic link sent by email and SMS', 'ok');
+      setTimeout(() => goTo(3), 600);
+    },
+    'resend-magic-link': () => {
+      toast('Link resent', 'A fresh 7-day link has been sent', 'ok');
+    },
+
+    // ---- FORM BUILDER ----
+    'publish-form': () => {
+      toast('Form v2.5 published', 'New patients now see the updated questions', 'ok');
+    },
+    'fb-add-question': () => {
+      toast('Add question', 'In a live build, the palette field types are draggable', 'ok');
+    }
   };
 
   // ---- ONE EVENT LISTENER FOR EVERY ACTION ----

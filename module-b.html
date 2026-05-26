@@ -515,6 +515,75 @@
     .quest-grid { grid-template-columns: 1fr; }
     .q-shell { grid-template-columns: 1fr; }
   }
+
+  /* === ROLE FLOWS (cover step-by-step) === */
+  .role-flow {
+    background: var(--panel);
+    border: 1px solid var(--line-soft);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--accent);
+  }
+  .role-flow.provider  { border-left-color: #1E5A8E; }
+  .role-flow.rn        { border-left-color: #2F855A; }
+  .role-flow.ma        { border-left-color: #6B3FA0; }
+  .role-flow.admin     { border-left-color: #AD1457; }
+  .role-flow-head {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px; margin-bottom: 12px; flex-wrap: wrap;
+  }
+  .role-flow-name {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .role-flow-name .role-tag { font-size: 9.5px; }
+  .role-flow-meta {
+    font-size: 11px; color: var(--text-soft);
+  }
+  .role-flow-steps {
+    display: flex; flex-wrap: wrap; align-items: stretch;
+    gap: 0; row-gap: 8px;
+  }
+  .role-step {
+    display: flex; flex-direction: column;
+    background: #F8FAFC;
+    border: 1px solid var(--line-soft);
+    border-radius: 5px;
+    padding: 7px 10px;
+    min-width: 100px;
+    cursor: pointer;
+    transition: border-color 0.12s, transform 0.12s;
+  }
+  .role-step:hover { border-color: var(--accent); transform: translateY(-1px); background: #F0F6FB; }
+  .role-step-num {
+    font-size: 9.5px; font-family: ui-monospace, monospace;
+    color: var(--text-faint); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.6px;
+  }
+  .role-step-title {
+    font-size: 11.5px; color: var(--navy);
+    font-weight: 500; margin-top: 2px; line-height: 1.3;
+  }
+  .role-step.entry {
+    background: #EAF6EE; border-color: #B7DCC3;
+  }
+  .role-step.entry .role-step-num { color: var(--ok); }
+  .role-step-arrow {
+    display: flex; align-items: center; justify-content: center;
+    width: 18px; flex-shrink: 0;
+    color: var(--text-faint); font-size: 13px;
+  }
+  .role-step.handoff {
+    background: #FEF8E7; border-color: #E0C275;
+    border-style: dashed;
+  }
+  .role-step.handoff .role-step-num { color: var(--warn); }
+
+  @media (max-width: 720px) {
+    .role-flow-steps { gap: 6px; }
+    .role-step { min-width: 0; flex: 1 1 calc(50% - 12px); }
+  }
 </style>
 </head>
 <body>
@@ -649,6 +718,123 @@
       Each screen shows the wireframe layout, the role(s) involved, and the functional requirement(s) it satisfies.
       All copy, data, and visuals shown are illustrative — final styling, content, and validation rules will be defined during the build phase.
       Module B picks up where Module A ends: the moment the patient is checked in, the provider opens the encounter from here.
+    </div>
+  </div>
+
+  <!-- ROLE-BY-ROLE STEP-BY-STEP -->
+  <div class="card" style="margin-top: 18px; padding: 20px 22px;">
+    <div class="seg-divider" style="margin-top: 0;">Step-by-step by role</div>
+    <div style="font-size: 12px; color: var(--text-soft); margin-bottom: 16px; line-height: 1.6;">
+      How each participant moves through Module B. Click any screen to jump to it. Green chips mark where a participant enters the flow; dashed gold chips mark hand-offs between roles.
+    </div>
+
+    <!-- DR. DRANNIKOV · PROVIDER ENCOUNTER -->
+    <div class="role-flow provider">
+      <div class="role-flow-head">
+        <div class="role-flow-name"><span class="role-tag role-provider">Provider</span> Dr. Drannikov · author the encounter end-to-end</div>
+        <div class="role-flow-meta">12 screens · per encounter, ~15–25 min documentation</div>
+      </div>
+      <div class="role-flow-steps">
+        <div class="role-step entry" data-action="b-goto" data-target="1"><div class="role-step-num">01</div><div class="role-step-title">Provider Worklist</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="2"><div class="role-step-num">02</div><div class="role-step-title">Patient Snapshot</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="3"><div class="role-step-num">03</div><div class="role-step-title">SOAP Note Editor</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="4"><div class="role-step-num">04</div><div class="role-step-title">FM Timeline</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="5"><div class="role-step-num">05</div><div class="role-step-title">Problem List</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="6"><div class="role-step-num">06</div><div class="role-step-title">Med Reconciliation</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="7"><div class="role-step-num">07</div><div class="role-step-title">Allergies</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="8"><div class="role-step-num">08</div><div class="role-step-title">Assessment &amp; Dx</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="9"><div class="role-step-num">09</div><div class="role-step-title">Orders Composer</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="10"><div class="role-step-num">10</div><div class="role-step-title">IV Infusion Order</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="11"><div class="role-step-num">11</div><div class="role-step-title">Sign &amp; Lock</div></div>
+        <div class="role-step-arrow">↘</div>
+        <div class="role-step handoff" data-action="b-goto" data-target="12"><div class="role-step-num">12</div><div class="role-step-title">Amendment / Addendum</div></div>
+      </div>
+    </div>
+
+    <!-- PROVIDER · QUESTIONNAIRES -->
+    <div class="role-flow provider">
+      <div class="role-flow-head">
+        <div class="role-flow-name"><span class="role-tag role-provider">Provider</span> Dr. Drannikov · pre-visit questionnaires</div>
+        <div class="role-flow-meta">3 screens · woven into the encounter, or pushed to portal in advance</div>
+      </div>
+      <div class="role-flow-steps">
+        <div class="role-step entry" data-action="b-goto" data-target="28"><div class="role-step-num">28</div><div class="role-step-title">Library (SF-36, Mold, Lyme, etc.)</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="29"><div class="role-step-num">29</div><div class="role-step-title">Administer</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="30"><div class="role-step-num">30</div><div class="role-step-title">Results &amp; Scoring → SOAP</div></div>
+      </div>
+    </div>
+
+    <!-- INFUSION RN -->
+    <div class="role-flow rn">
+      <div class="role-flow-head">
+        <div class="role-flow-name"><span class="role-tag role-rn">Infusion RN</span> Chair-side documentation</div>
+        <div class="role-flow-meta">5 screens · per infusion session</div>
+      </div>
+      <div class="role-flow-steps">
+        <div class="role-step entry" data-action="b-goto" data-target="13"><div class="role-step-num">13</div><div class="role-step-title">Bay Board</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="14"><div class="role-step-num">14</div><div class="role-step-title">Pre-Infusion Verification</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="15"><div class="role-step-num">15</div><div class="role-step-title">Infusion Flowsheet</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="16"><div class="role-step-num">16</div><div class="role-step-title">Post-Infusion Doc</div></div>
+        <div class="role-step-arrow">↘</div>
+        <div class="role-step handoff" data-action="b-goto" data-target="17"><div class="role-step-num">17</div><div class="role-step-title">Adverse Event (if needed)</div></div>
+      </div>
+    </div>
+
+    <!-- CHARLENNE · REMOTE MA -->
+    <div class="role-flow ma">
+      <div class="role-flow-head">
+        <div class="role-flow-name"><span class="role-tag role-ma">Remote MA</span> Charlenne · pre/post-visit support</div>
+        <div class="role-flow-meta">3 screens · before encounters and after sign</div>
+      </div>
+      <div class="role-flow-steps">
+        <div class="role-step entry" data-action="b-goto" data-target="18"><div class="role-step-num">18</div><div class="role-step-title">Pre-Charting Queue</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="19"><div class="role-step-num">19</div><div class="role-step-title">Pre-Charting Workspace</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="20"><div class="role-step-num">20</div><div class="role-step-title">Post-Visit Tasks</div></div>
+      </div>
+    </div>
+
+    <!-- ADMIN · TEMPLATES + OVERSIGHT -->
+    <div class="role-flow admin">
+      <div class="role-flow-head">
+        <div class="role-flow-name"><span class="role-tag role-admin">Admin</span> Shibani &amp; provider admin · templates, oversight, quality</div>
+        <div class="role-flow-meta">7 screens · weekly / monthly review + as-needed</div>
+      </div>
+      <div class="role-flow-steps">
+        <div class="role-step entry" data-action="b-goto" data-target="21"><div class="role-step-num">21</div><div class="role-step-title">Template Library</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="22"><div class="role-step-num">22</div><div class="role-step-title">Template Editor</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="23"><div class="role-step-num">23</div><div class="role-step-title">Dot-Phrase Manager</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="24"><div class="role-step-num">24</div><div class="role-step-title">Co-Signature Queue</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="25"><div class="role-step-num">25</div><div class="role-step-title">Audit Log</div></div>
+        <div class="role-step-arrow">→</div>
+        <div class="role-step" data-action="b-goto" data-target="26"><div class="role-step-num">26</div><div class="role-step-title">Doc Quality Metrics</div></div>
+        <div class="role-step-arrow">↘</div>
+        <div class="role-step handoff" data-action="b-goto" data-target="27"><div class="role-step-num">27</div><div class="role-step-title">System States</div></div>
+      </div>
+    </div>
+
+    <div style="font-size: 11.5px; color: var(--text-soft); margin-top: 14px; line-height: 1.6; padding-top: 12px; border-top: 1px dashed var(--line-soft);">
+      <strong style="color: var(--navy);">Where modules connect:</strong> Module A's Front Desk check-in (screen 32 in Module A) puts the encounter on the provider's worklist here. Charlenne's pre-chart lands inside the SOAP note. When the provider signs on screen 11, orders dispatch to Module C (Labs), the infusion bay queue (screen 13), and Module E generates charges.
     </div>
   </div>
 </div>
